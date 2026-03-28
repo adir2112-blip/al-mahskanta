@@ -13,6 +13,7 @@
     --gold-dark: #A07830;
     --black: #0A0A0A;
     --dark: #111111;
+
     --dark2: #1A1A1A;
     --white: #FFFFFF;
     --off-white: #F8F5F0;
@@ -919,9 +920,14 @@
 
   /* ===== SCROLL REVEAL ===== */
   .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.hidden {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
   .reveal.visible {
@@ -1370,4 +1376,4 @@ function submitForm() {
 
 // Scroll reveal
 const revealEls = document.querySelectorAll('.reveal');
-const observer = new 
+const observer = new
