@@ -269,6 +269,35 @@ function calcMortgage() {
   document.getElementById('calcResult').style.cssText = 'display:block';
 }
 
+
+// Handle Formspree submission
+var form = document.getElementById('formArea');
+if (form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    fetch('https://formspree.io/f/mnjojkel', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        alert('שגיאה בשליחה, נסה שוב');
+      }
+    }).catch(function() {
+      alert('שגיאה בשליחה, נסה שוב');
+    });
+  });
+}
+
+
+// Show email safely
+var el = document.getElementById('emailDisplay');
+if(el) el.textContent = atob('YWRpcjIxMTJAZ21haWwuY29t');
+
 </script>
     </div>
   </div>
@@ -304,27 +333,17 @@ function calcMortgage() {
         </div>
       </div>
       <div class="contact-form-wrap">
-        <div id="formArea">
+        <form id="formArea" action="https://formspree.io/f/mnjojkel" method="POST">
           <div class="form-row">
-            <div class="form-field"><label>&#1513;&#1501; &#1502;&#1500;&#1488;</label><input type="text" placeholder="&#1497;&#1513;&#1512;&#1488;&#1500; &#1497;&#1513;&#1512;&#1488;&#1500;&#1497;"></div>
-            <div class="form-field"><label>&#1496;&#1500;&#1508;&#1493;&#1503;</label><input type="tel" placeholder="050-0000000"></div>
+            <div class="form-field"><label>&#1513;&#1501; &#1502;&#1500;&#1488;</label><input type="text" name="name" placeholder="&#1497;&#1513;&#1512;&#1488;&#1500; &#1497;&#1513;&#1512;&#1488;&#1500;&#1497;" required></div>
+            <div class="form-field"><label>&#1496;&#1500;&#1508;&#1493;&#1503;</label><input type="tel" name="phone" placeholder="050-0000000" required></div>
           </div>
           <div class="form-field"><label>&#1504;&#1493;&#1513;&#1488; &#1492;&#1508;&#1504;&#1497;&#1497;&#1492;</label>
-            <select><option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1512;&#1488;&#1513;&#1493;&#1504;&#1492;</option><option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1513;&#1504;&#1497;&#1497;&#1492;</option><option>&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</option><option>&#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;</option><option>&#1488;&#1495;&#1512;</option></select>
+            <select name="subject"><option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1512;&#1488;&#1513;&#1493;&#1504;&#1492;</option><option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1513;&#1504;&#1497;&#1497;&#1492;</option><option>&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</option><option>&#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;</option><option>&#1488;&#1495;&#1512;</option></select>
           </div>
-          <div class="form-field"><label>&#1492;&#1493;&#1491;&#1506;&#1492;</label><textarea placeholder="&#1505;&#1508;&#1512;&#1493; &#1500;&#1504;&#1493; &#1489;&#1511;&#1510;&#1512;&#1492;..."></textarea></div>
-          <button class="form-submit" onclick="
-  var n=document.querySelector('#formArea input[type=text]').value;
-  var p=document.querySelector('#formArea input[type=tel]').value;
-  var s=document.querySelector('#formArea select').value;
-  var m=document.querySelector('#formArea textarea').value;
-  if(!n||!p){alert('נא למלא שם וטלפון');return;}
-  var b='שם: '+n+'%0Aטלפון: '+p+'%0Aנושא: '+s+'%0Aהודעה: '+m;
-  window.open('mailto:adir2112@gmail.com?subject=בקשת ייעוץ - '+n+'&body='+b);
-  document.getElementById('formArea').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
-">&#1513;&#1500;&#1495; &#1489;&#1511;&#1513;&#1514; &#1497;&#1497;&#1506;&#1493;&#1509; &#10003;</button>
-        </div>
+          <div class="form-field"><label>&#1492;&#1493;&#1491;&#1506;&#1492;</label><textarea name="message" placeholder="&#1505;&#1508;&#1512;&#1493; &#1500;&#1504;&#1493; &#1489;&#1511;&#1510;&#1512;&#1492;..."></textarea></div>
+          <button type="submit" class="form-submit" type="submit">&#1513;&#1500;&#1495; &#1489;&#1511;&#1513;&#1514; &#1497;&#1497;&#1506;&#1493;&#1509; &#10003;</button>
+        </form>
         <div class="form-success" id="formSuccess">
           <div style="font-size:3rem;margin-bottom:1rem">&#9989;</div>
           <div style="color:var(--gold);font-size:1.2rem;font-weight:700">&#1492;&#1508;&#1504;&#1497;&#1497;&#1492; &#1492;&#1514;&#1511;&#1489;&#1500;&#1492; &#1489;&#1492;&#1510;&#1500;&#1495;&#1492;!</div>
