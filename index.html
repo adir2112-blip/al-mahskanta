@@ -92,21 +92,21 @@ section{padding:6rem 2rem}
 .blog-body{padding:1.5rem 2rem 2rem}
 .blog-exc{color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.25rem}
 .blog-link{color:var(--gold);text-decoration:none;font-weight:600;font-size:.9rem}
-#contact{background:linear-gradient(135deg,#1A1208 0%,#2C1E08 100%)}
+#contact{background:linear-gradient(160deg,#F8F4EC 0%,#EDE5D0 50%,#F8F4EC 100%)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
-.contact-desc{color:rgba(255,255,255,.6);margin-top:1.5rem;line-height:1.7}
+.contact-desc{color:#555;margin-top:1.5rem;line-height:1.7}
 .contact-details{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.25rem}
-.contact-item{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.8);text-decoration:none;font-size:1rem;transition:color .3s}
+.contact-item{display:flex;align-items:center;gap:1rem;color:#333;text-decoration:none;font-size:1rem;transition:color .3s}
 .contact-item:hover{color:var(--gold)}
-.contact-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.contact-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:2.5rem}
+.contact-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-form-wrap{background:#fff;border:1px solid rgba(201,168,76,.3);border-radius:16px;padding:2.5rem;box-shadow:0 10px 40px rgba(0,0,0,.08)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
 .form-field{margin-bottom:1rem}
-.form-field label{display:block;font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem}
-.form-field input,.form-field select,.form-field textarea{width:100%;padding:.9rem 1rem;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;color:var(--white);font-family:'Heebo',sans-serif;font-size:.95rem;transition:border-color .3s;direction:rtl}
+.form-field label{display:block;font-size:.85rem;color:#555;margin-bottom:.5rem}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:.9rem 1rem;background:#F8F5F0;border:1.5px solid #E0D8C8;border-radius:8px;color:#333;font-family:'Heebo',sans-serif;font-size:.95rem;transition:border-color .3s;direction:rtl}
 .form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--gold)}
 .form-field textarea{height:120px;resize:vertical}
-.form-field select option{background:var(--dark)}
+.form-field select option{background:#fff}
 .form-submit{width:100%;padding:1.1rem;background:var(--gold);color:var(--black);border:none;border-radius:8px;font-size:1.05rem;font-weight:700;font-family:'Heebo',sans-serif;cursor:pointer;transition:all .3s}
 .form-submit:hover{background:var(--gold-light)}
 .form-success{display:none;text-align:center;padding:2rem}
@@ -298,6 +298,18 @@ if (form) {
 var el = document.getElementById('emailDisplay');
 if(el) el.textContent = atob('YWRpcjIxMTJAZ21haWwuY29t');
 
+
+window.addEventListener('load', function() {
+  var u = 'adir2112';
+  var d = 'gmail.com';
+  var el = document.getElementById('emailLink');
+  var txt = document.getElementById('emailText');
+  if(el && txt) {
+    el.href = 'mailto:' + u + '@' + d;
+    txt.textContent = u + '@' + d;
+  }
+});
+
 </script>
     </div>
   </div>
@@ -323,13 +335,11 @@ if(el) el.textContent = atob('YWRpcjIxMTJAZ21haWwuY29t');
     <div class="contact-grid">
       <div>
         <span class="sec-label">&#1491;&#1489;&#1512;&#1493; &#1488;&#1497;&#1514;&#1504;&#1493;</span>
-        <h2 class="sec-title light">&#1510;&#1512;&#1493; &#1511;&#1513;&#1512;</h2>
+        <h2 class="sec-title" style="color:#1A1208">&#1510;&#1512;&#1493; &#1511;&#1513;&#1512;</h2>
         <div class="gold-line" style="margin:1.5rem 0 0"></div>
         <p class="contact-desc">&#1488;&#1504;&#1495;&#1504;&#1493; &#1499;&#1488;&#1503; &#1489;&#1513;&#1489;&#1497;&#1500;&#1499;&#1501;. &#1492;&#1513;&#1488;&#1497;&#1512;&#1493; &#1508;&#1512;&#1496;&#1497;&#1501; &#1493;&#1504;&#1495;&#1494;&#1493;&#1512; &#1488;&#1500;&#1497;&#1499;&#1501; &#1514;&#1493;&#1498; &#1513;&#1506;&#1493;&#1514; &#1505;&#1508;&#1493;&#1512;&#1493;&#1514; &#8212; &#1500;&#1497;&#1497;&#1506;&#1493;&#1509; &#1512;&#1488;&#1513;&#1493;&#1504;&#1497; &#1495;&#1497;&#1504;&#1501;.</p>
         <div class="contact-details">
-          <a href="tel:0509143496" class="contact-item"><div class="contact-icon">&#128222;</div><span>050-914-3496</span></a>
-          <a href="https://wa.me/972509143496" class="contact-item" target="_blank"><div class="contact-icon">&#128172;</div><span>WhatsApp</span></a>
-          <a href="/cdn-cgi/l/email-protection#3c5d58554e0e0d0d0e7c5b515d5550125f5351" class="contact-item"><div class="contact-icon">&#9993;&#65039;</div><span><span class="__cf_email__" data-cfemail="f9989d908bcbc8c8cbb99e94989095d79a9694">[email&#160;protected]</span></span></a>
+          
         </div>
       </div>
       <div class="contact-form-wrap">
