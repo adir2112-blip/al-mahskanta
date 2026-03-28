@@ -31,7 +31,7 @@ nav{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(10,10,10,.9
 .btn-outline{border:1px solid rgba(255,255,255,.3);color:var(--white);padding:1rem 2rem;border-radius:6px;font-size:1rem;text-decoration:none;transition:all .3s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 .hero-img{text-align:center}
-.hero-img img{width:100%;max-width:420px;border-radius:12px;position:relative;z-index:2}
+.hero-img img{width:100%;max-width:420px;border-radius:12px;position:relative;z-index:2;object-fit:cover;height:500px}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
 .stat-num{font-family:'Frank Ruhl Libre',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block}
 .stat-lbl{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.3rem;display:block}
@@ -126,7 +126,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
 <body>
 <nav>
   <div class="nav-logo">
-    <img id="logo-img" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png" alt="A.L">
+    <img id="logo-img" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.jpg" alt="A.L">
     <div class="nav-logo-text">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;<br><span style="font-size:.75rem;font-weight:300;color:rgba(201,168,76,.7)">&#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514;</span></div>
   </div>
   <ul class="nav-links">
@@ -245,7 +245,30 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
       <div class="gold-line"></div>
     </div>
     <div id="trustindex-widget">
-      <script defer async src='https://cdn.trustindex.io/loader.js?60de5a468822165d1f168b48b6b'></script>
+      <script defer async src='https://cdn.trustindex.io/loader.js?60de5a468822165d1f168b48b6b'>
+function calcMortgage() {
+  var loan = parseFloat(document.getElementById('loan').value) || 0;
+  var rate = parseFloat(document.getElementById('rate').value) || 0;
+  var years = parseInt(document.getElementById('years').value) || 0;
+  if (loan <= 0 || rate <= 0 || years <= 0) {
+    alert('נא למלא את כל השדות');
+    return;
+  }
+  var months = years * 12;
+  var monthlyRate = rate / 100 / 12;
+  var payment = loan * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+  var totalPay = payment * months;
+  var totalInt = totalPay - loan;
+  function money(n) {
+    return '₪' + Math.round(n).toLocaleString('he-IL');
+  }
+  document.getElementById('resAmt').innerText = money(payment);
+  document.getElementById('resTotal').innerText = money(totalPay);
+  document.getElementById('resInt').innerText = money(totalInt);
+  document.getElementById('calcResult').style.cssText = 'display:block';
+}
+
+</script>
     </div>
   </div>
 </section>
@@ -303,7 +326,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo"><img id="footer-logo" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png" alt="A.L"></div>
+    <div class="footer-logo"><img id="footer-logo" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.jpg" alt="A.L"></div>
     <div class="footer-copy">&copy; 2025 A.L &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#8212; &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;</div>
     <ul class="footer-links">
       <li><a href="#hero">&#1489;&#1497;&#1514;</a></li>
@@ -316,25 +339,12 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
 <a href="https://wa.me/972509143496" class="wa-float" target="_blank">&#128172;</a>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.getElementById('logo-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png';
+document.getElementById('logo-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.jpg';
 document.getElementById('photo-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg';
 document.getElementById('about-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg';
-document.getElementById('footer-logo').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png';
+document.getElementById('footer-logo').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.jpg';
 
-function calcMortgage() {
-  const loan = parseFloat(document.getElementById('loan').value);
-  const rate = parseFloat(document.getElementById('rate').value);
-  const years = parseInt(document.getElementById('years').value);
-  if (!loan || !rate || !years) return;
-  const m = years * 12, mr = rate / 100 / 12;
-  const monthly = loan * (mr * Math.pow(1+mr,m)) / (Math.pow(1+mr,m)-1);
-  const total = monthly * m;
-  const fmt = n => '₪' + Math.round(n).toLocaleString('he-IL');
-  document.getElementById('resAmt').textContent = fmt(monthly);
-  document.getElementById('resTotal').textContent = fmt(total);
-  document.getElementById('resInt').textContent = fmt(total - loan);
-  document.getElementById('calcResult').classList.add('show');
-}
+
 
 function submitForm() {
   const fields = document.querySelectorAll('#formArea input, #formArea select, #formArea textarea');
