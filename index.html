@@ -223,7 +223,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
         <div class="calc-field"><label>&#1514;&#1511;&#1493;&#1508;&#1492; (&#1513;&#1504;&#1497;&#1501;)</label><input type="number" id="years" value="25"></div>
         <div class="calc-field"><label>&#1505;&#1493;&#1490; &#1492;&#1500;&#1493;&#1493;&#1488;&#1492;</label><select id="ltype"><option value="s">&#1513;&#1508;&#1497;&#1510;&#1512;</option><option value="k">&#1511;&#1512;&#1503; &#1513;&#1493;&#1493;&#1492;</option></select></div>
       </div>
-      <button class="calc-btn" onclick="(function(){var loan=parseFloat(document.getElementById('loan').value);var rate=parseFloat(document.getElementById('rate').value);var years=parseInt(document.getElementById('years').value);if(!loan||!rate||!years){alert('נא למלא את כל השדות');return;}var m=years*12;var mr=rate/100/12;var pay=loan*(mr*Math.pow(1+mr,m))/(Math.pow(1+mr,m)-1);var tot=pay*m;document.getElementById('resAmt').innerText='&#8362;'+Math.round(pay).toLocaleString();document.getElementById('resTotal').innerText='&#8362;'+Math.round(tot).toLocaleString();document.getElementById('resInt').innerText='&#8362;'+Math.round(tot-loan).toLocaleString();document.getElementById('calcResult').style.display='block';})()">&#1495;&#1513;&#1489; &#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#127968;</button>
+      <button class="calc-btn" onclick="(function(){var loan=parseFloat(document.getElementById('loan').value);var rate=parseFloat(document.getElementById('rate').value);var years=parseInt(document.getElementById('years').value);if(!loan||!rate||!years){alert('׳ ׳ ׳׳׳׳ ׳׳× ׳›׳ ׳”׳©׳“׳•׳×');return;}var m=years*12;var mr=rate/100/12;var pay=loan*(mr*Math.pow(1+mr,m))/(Math.pow(1+mr,m)-1);var tot=pay*m;document.getElementById('resAmt').innerText='&#8362;'+Math.round(pay).toLocaleString();document.getElementById('resTotal').innerText='&#8362;'+Math.round(tot).toLocaleString();document.getElementById('resInt').innerText='&#8362;'+Math.round(tot-loan).toLocaleString();document.getElementById('calcResult').style.display='block';})()">&#1495;&#1513;&#1489; &#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#127968;</button>
       <div class="calc-result" id="calcResult">
         <div class="result-lbl">&#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#1502;&#1513;&#1493;&#1506;&#1512;</div>
         <div class="result-amt" id="resAmt">&#8362;0</div>
@@ -252,7 +252,7 @@ function calcMortgage() {
   var rate = parseFloat(document.getElementById('rate').value) || 0;
   var years = parseInt(document.getElementById('years').value) || 0;
   if (loan <= 0 || rate <= 0 || years <= 0) {
-    alert('נא למלא את כל השדות');
+    alert('׳ ׳ ׳׳׳׳ ׳׳× ׳›׳ ׳”׳©׳“׳•׳×');
     return;
   }
   var months = years * 12;
@@ -261,7 +261,7 @@ function calcMortgage() {
   var totalPay = payment * months;
   var totalInt = totalPay - loan;
   function money(n) {
-    return '₪' + Math.round(n).toLocaleString('he-IL');
+    return 'ג‚×' + Math.round(n).toLocaleString('he-IL');
   }
   document.getElementById('resAmt').innerText = money(payment);
   document.getElementById('resTotal').innerText = money(totalPay);
@@ -285,10 +285,10 @@ if (form) {
         form.style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       } else {
-        alert('שגיאה בשליחה, נסה שוב');
+        alert('׳©׳’׳™׳׳” ׳‘׳©׳׳™׳—׳”, ׳ ׳¡׳” ׳©׳•׳‘');
       }
     }).catch(function() {
-      alert('שגיאה בשליחה, נסה שוב');
+      alert('׳©׳’׳™׳׳” ׳‘׳©׳׳™׳—׳”, ׳ ׳¡׳” ׳©׳•׳‘');
     });
   });
 }
@@ -395,9 +395,9 @@ function submitForm() {
   var phone = phoneEl ? phoneEl.value : '';
   var subject = subjectEl ? subjectEl.value : '';
   var msg = msgEl ? msgEl.value : '';
-  if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
-  var body = 'שם: ' + name + '%0Aטלפון: ' + phone + '%0Aנושא: ' + subject + '%0Aהודעה: ' + msg;
-  window.location.href = 'mailto:adir2112@gmail.com?subject=בקשת ייעוץ - ' + name + '&body=' + body;
+  if (!name || !phone) { alert('׳ ׳ ׳׳׳׳ ׳©׳ ׳•׳˜׳׳₪׳•׳'); return; }
+  var body = '׳©׳: ' + name + '%0A׳˜׳׳₪׳•׳: ' + phone + '%0A׳ ׳•׳©׳: ' + subject + '%0A׳”׳•׳“׳¢׳”: ' + msg;
+  window.location.href = 'mailto:adir2112@gmail.com?subject=׳‘׳§׳©׳× ׳™׳™׳¢׳•׳¥ - ' + name + '&body=' + body;
   setTimeout(function(){
     document.getElementById('formArea').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
