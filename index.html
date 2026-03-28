@@ -18,7 +18,7 @@ nav{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(10,10,10,.9
 .nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;transition:color .3s}
 .nav-links a:hover{color:var(--gold)}
 .nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:.5rem 1.25rem;border-radius:4px;font-weight:700!important}
-#hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;overflow:hidden;padding-top:70px;position:relative}
+#hero{min-height:100vh;background:linear-gradient(135deg,#1A1208 0%,#2C1E08 40%,#1A1208 100%);display:flex;align-items:center;overflow:hidden;padding-top:70px;position:relative}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.08),transparent 60%)}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:.4rem 1rem;border-radius:50px;font-size:.85rem;margin-bottom:1.5rem}
@@ -30,8 +30,8 @@ nav{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(10,10,10,.9
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
 .btn-outline{border:1px solid rgba(255,255,255,.3);color:var(--white);padding:1rem 2rem;border-radius:6px;font-size:1rem;text-decoration:none;transition:all .3s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-.hero-img{text-align:center}
-.hero-img img{width:100%;max-width:420px;border-radius:12px;position:relative;z-index:2;object-fit:cover;height:500px}
+.hero-img{text-align:center;position:relative}
+.hero-img img{width:100%;max-width:420px;border-radius:12px;display:block;margin:0 auto;box-shadow:none;border:none}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
 .stat-num{font-family:'Frank Ruhl Libre',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block}
 .stat-lbl{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.3rem;display:block}
@@ -40,7 +40,7 @@ section{padding:6rem 2rem}
 .sec-header{text-align:center;margin-bottom:4rem}
 .sec-label{display:inline-block;color:var(--gold);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;font-weight:500}
 .sec-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:var(--dark);line-height:1.2}
-.sec-title.light{color:var(--white)}
+.sec-title.light{color:#1A1208}
 .gold-line{width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin:1.5rem auto 0;border-radius:2px}
 #services{background:var(--off)}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
@@ -51,14 +51,14 @@ section{padding:6rem 2rem}
 .svc-icon{font-size:2.5rem;margin-bottom:1.25rem;display:block}
 .svc-name{font-family:'Frank Ruhl Libre',serif;font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:.75rem}
 .svc-desc{color:var(--gray);font-size:.95rem;line-height:1.7}
-#about{background:var(--dark)}
+#about{background:linear-gradient(135deg,#F5F0E8 0%,#EDE5D0 100%)}
 .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center}
 .about-frame{position:relative;display:inline-block}
 .about-frame img{width:100%;max-width:380px;border-radius:10px;display:block;position:relative;z-index:2}
 .about-border{position:absolute;top:20px;right:-20px;left:20px;bottom:-20px;border:2px solid rgba(201,168,76,.4);border-radius:10px;z-index:1}
-.about-text{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.85;margin-top:1.5rem}
+.about-text{color:#444;font-size:1.05rem;line-height:1.85;margin-top:1.5rem}
 .about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
-.about-feat{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.8);font-size:.9rem}
+.about-feat{display:flex;align-items:flex-start;gap:10px;color:#333;font-size:.9rem}
 .about-feat-icon{color:var(--gold);flex-shrink:0}
 #calculator{background:var(--off)}
 .calc-wrap{max-width:700px;margin:0 auto;background:var(--white);border-radius:16px;padding:3rem;box-shadow:0 10px 50px rgba(0,0,0,.08);border:1px solid var(--light)}
@@ -72,15 +72,15 @@ section{padding:6rem 2rem}
 .calc-result.show{display:block}
 .result-lbl{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:.5rem}
 .result-amt{font-family:'Frank Ruhl Libre',serif;font-size:2.5rem;font-weight:900;color:var(--gold)}
-#reviews{background:var(--dark)}
+#reviews{background:linear-gradient(135deg,#F0EBE0 0%,#E8DFC8 100%)}
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-.rev-card{background:var(--dark2);border-radius:12px;padding:2rem;border:1px solid rgba(201,168,76,.15);transition:all .3s}
+.rev-card{background:#fff;border-radius:12px;padding:2rem;border:1px solid rgba(201,168,76,.3);transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .rev-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-4px)}
 .rev-stars{color:var(--gold);font-size:1.1rem;margin-bottom:1rem;letter-spacing:2px}
-.rev-text{color:rgba(255,255,255,.75);font-size:.95rem;line-height:1.75;margin-bottom:1.25rem;font-style:italic}
+.rev-text{color:#555;font-size:.95rem;line-height:1.75;margin-bottom:1.25rem;font-style:italic}
 .rev-author{display:flex;align-items:center;gap:10px}
 .rev-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#A07830);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--black);font-size:.9rem;flex-shrink:0}
-.rev-name{color:var(--white);font-weight:600;font-size:.9rem}
+.rev-name{color:#222;font-weight:600;font-size:.9rem}
 .rev-src{color:var(--gold);font-size:.75rem}
 #blog{background:var(--off)}
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
@@ -92,7 +92,7 @@ section{padding:6rem 2rem}
 .blog-body{padding:1.5rem 2rem 2rem}
 .blog-exc{color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.25rem}
 .blog-link{color:var(--gold);text-decoration:none;font-weight:600;font-size:.9rem}
-#contact{background:var(--dark)}
+#contact{background:linear-gradient(135deg,#1A1208 0%,#2C1E08 100%)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
 .contact-desc{color:rgba(255,255,255,.6);margin-top:1.5rem;line-height:1.7}
 .contact-details{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.25rem}
@@ -185,11 +185,11 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
     <div class="about-grid">
       <div class="about-frame">
         <img id="about-img" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg" alt="&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;">
-        <div class="about-border"></div>
+        
       </div>
       <div>
         <span class="sec-label">&#1502;&#1497; &#1488;&#1504;&#1497;</span>
-        <h2 class="sec-title light">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497; &#8212; &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498;</h2>
+        <h2 class="sec-title" style="color:#1A1208">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497; &#8212; &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498;</h2>
         <div class="gold-line" style="margin:1.5rem 0 0"></div>
         <p class="about-text">&#1513;&#1502;&#1497; &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;, &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498; &#1506;&#1501; &#1504;&#1497;&#1505;&#1497;&#1493;&#1503; &#1512;&#1489; &#1489;&#1514;&#1495;&#1493;&#1501; &#1492;&#1502;&#1497;&#1502;&#1493;&#1503; &#1492;&#1504;&#1491;&#1500;"&#1503;. &#1488;&#1504;&#1497; &#1502;&#1500;&#1493;&#1493;&#1492; &#1500;&#1511;&#1493;&#1495;&#1493;&#1514; &#1500;&#1488;&#1493;&#1512;&#1498; &#1499;&#1500; &#1492;&#1514;&#1492;&#1500;&#1497;&#1498; &#8212; &#1502;&#1492;&#1512;&#1490;&#1506; &#1492;&#1512;&#1488;&#1513;&#1493;&#1503; &#1493;&#1506;&#1491; &#1511;&#1489;&#1500;&#1514; &#1492;&#1502;&#1508;&#1514;&#1495;.</p>
         <div class="about-features">
@@ -222,7 +222,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
         <div class="calc-field"><label>&#1514;&#1511;&#1493;&#1508;&#1492; (&#1513;&#1504;&#1497;&#1501;)</label><input type="number" id="years" value="25"></div>
         <div class="calc-field"><label>&#1505;&#1493;&#1490; &#1492;&#1500;&#1493;&#1493;&#1488;&#1492;</label><select id="ltype"><option value="s">&#1513;&#1508;&#1497;&#1510;&#1512;</option><option value="k">&#1511;&#1512;&#1503; &#1513;&#1493;&#1493;&#1492;</option></select></div>
       </div>
-      <button class="calc-btn" onclick="calcMortgage()">&#1495;&#1513;&#1489; &#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#127968;</button>
+      <button class="calc-btn" onclick="(function(){var loan=parseFloat(document.getElementById('loan').value);var rate=parseFloat(document.getElementById('rate').value);var years=parseInt(document.getElementById('years').value);if(!loan||!rate||!years){alert('נא למלא את כל השדות');return;}var m=years*12;var mr=rate/100/12;var pay=loan*(mr*Math.pow(1+mr,m))/(Math.pow(1+mr,m)-1);var tot=pay*m;document.getElementById('resAmt').innerText='&#8362;'+Math.round(pay).toLocaleString();document.getElementById('resTotal').innerText='&#8362;'+Math.round(tot).toLocaleString();document.getElementById('resInt').innerText='&#8362;'+Math.round(tot-loan).toLocaleString();document.getElementById('calcResult').style.display='block';})()">&#1495;&#1513;&#1489; &#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#127968;</button>
       <div class="calc-result" id="calcResult">
         <div class="result-lbl">&#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#1502;&#1513;&#1493;&#1506;&#1512;</div>
         <div class="result-amt" id="resAmt">&#8362;0</div>
