@@ -10,31 +10,31 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Heebo',sans-serif;background:var(--off);color:var(--dark);direction:rtl}
-nav{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.2);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px}
+nav{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(13,13,13,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.2);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px}
 .nav-logo{display:flex;align-items:center;gap:12px}
 .nav-logo img{height:48px;width:48px;object-fit:contain}
 .nav-logo-text{font-family:'Frank Ruhl Libre',serif;color:var(--gold);font-size:1.1rem;font-weight:700;line-height:1.2}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;transition:color .3s}
+.nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:.95rem;transition:color .3s}
 .nav-links a:hover{color:var(--gold)}
 .nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:.5rem 1.25rem;border-radius:4px;font-weight:700!important}
-#hero{min-height:100vh;background:linear-gradient(135deg,#1A1208 0%,#2C1E08 40%,#1A1208 100%);display:flex;align-items:center;overflow:hidden;padding-top:70px;position:relative}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.08),transparent 60%)}
+#hero{min-height:100vh;background:linear-gradient(160deg,#0D0D0D 0%,#1C1408 35%,#2A1E06 60%,#1C1408 100%);display:flex;align-items:center;overflow:hidden;padding-top:70px;position:relative}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(201,168,76,0.18) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(201,168,76,0.08) 0%,transparent 40%),linear-gradient(180deg,rgba(0,0,0,0.3) 0%,transparent 100%)}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:.4rem 1rem;border-radius:50px;font-size:.85rem;margin-bottom:1.5rem}
-.hero-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:1rem}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);color:var(--gold);padding:.4rem 1rem;border-radius:50px;font-size:.85rem;margin-bottom:1.5rem}
+.hero-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:#FFFFFF;line-height:1.1;margin-bottom:1rem}
 .hero-title span{color:var(--gold);display:block}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:2.5rem;font-weight:300}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:2.5rem;font-weight:300}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
 .btn-gold{background:var(--gold);color:var(--black);padding:1rem 2rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .3s;font-family:'Heebo',sans-serif;display:inline-block}
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
-.btn-outline{border:1px solid rgba(255,255,255,.3);color:var(--white);padding:1rem 2rem;border-radius:6px;font-size:1rem;text-decoration:none;transition:all .3s}
+.btn-outline{border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;padding:1rem 2rem;border-radius:6px;font-size:1rem;text-decoration:none;transition:all .3s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 .hero-img{text-align:center;position:relative}
 .hero-img img{width:100%;max-width:420px;border-radius:12px;display:block;margin:0 auto;box-shadow:none;border:none}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,168,76,0.25)}
 .stat-num{font-family:'Frank Ruhl Libre',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block}
-.stat-lbl{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.3rem;display:block}
+.stat-lbl{font-size:.8rem;color:rgba(255,255,255,0.5);margin-top:.3rem;display:block}
 section{padding:6rem 2rem}
 .sec-inner{max-width:1200px;margin:0 auto}
 .sec-header{text-align:center;margin-bottom:4rem}
@@ -141,6 +141,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
 
 <section id="hero">
   <div class="hero-bg"></div>
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none"></div>
   <div class="hero-content">
     <div>
       <div class="hero-badge">&#10022; &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1511;&#1510;&#1493;&#1506;&#1497;</div>
@@ -174,7 +175,7 @@ footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:
       <div class="svc-card"><span class="svc-icon">&#128260;</span><div class="svc-name">&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</div><p class="svc-desc">&#1489;&#1491;&#1497;&#1511;&#1492; &#1492;&#1488;&#1501; &#1499;&#1491;&#1488;&#1497; &#1500;&#1502;&#1495;&#1494;&#1512; &#1488;&#1514; &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1492;&#1511;&#1497;&#1497;&#1502;&#1514; &#1500;&#1514;&#1504;&#1488;&#1497;&#1501; &#1496;&#1493;&#1489;&#1497;&#1501; &#1497;&#1493;&#1514;&#1512; &#1493;&#1495;&#1497;&#1505;&#1499;&#1493;&#1503; &#1502;&#1513;&#1502;&#1506;&#1493;&#1514;&#1497;.</p></div>
       <div class="svc-card"><span class="svc-icon">&#128202;</span><div class="svc-name">&#1514;&#1499;&#1504;&#1493;&#1503; &#1508;&#1497;&#1504;&#1504;&#1505;&#1497;</div><p class="svc-desc">&#1489;&#1504;&#1497;&#1497;&#1514; &#1514;&#1502;&#1492;&#1497;&#1500; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1488;&#1493;&#1508;&#1496;&#1497;&#1502;&#1500;&#1497; &#1492;&#1502;&#1493;&#1514;&#1488;&#1501; &#1488;&#1497;&#1513;&#1497;&#1514; &#1500;&#1502;&#1510;&#1489;&#1499;&#1501; &#1492;&#1508;&#1497;&#1504;&#1504;&#1505;&#1497;.</p></div>
       <div class="svc-card"><span class="svc-icon">&#127959;&#65039;</span><div class="svc-name">&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1500;&#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;</div><p class="svc-desc">&#1500;&#1497;&#1493;&#1493;&#1497; &#1502;&#1500;&#1488; &#1500;&#1508;&#1512;&#1493;&#1497;&#1511;&#1496;&#1497;&#1501; &#1513;&#1500; &#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;, &#1499;&#1493;&#1500;&#1500; &#1504;&#1497;&#1492;&#1493;&#1500; &#1513;&#1500;&#1489;&#1497; &#1492;&#1502;&#1513;&#1497;&#1499;&#1492; &#1502;&#1492;&#1489;&#1504;&#1511;.</p></div>
-      <div class="svc-card"><span class="svc-icon">&#128188;</span><div class="svc-name">&#1497;&#1497;&#1506;&#1493;&#1509; &#1500;&#1492;&#1513;&#1511;&#1506;&#1493;&#1514; &#1504;&#1491;&#1500;"&#1503;</div><p class="svc-desc">&#1489;&#1495;&#1497;&#1504;&#1514; &#1499;&#1491;&#1488;&#1497;&#1493;&#1514; &#1493;&#1502;&#1489;&#1504;&#1492; &#1502;&#1497;&#1502;&#1493;&#1503; &#1488;&#1493;&#1508;&#1496;&#1497;&#1502;&#1500;&#1497; &#1500;&#1512;&#1499;&#1497;&#1513;&#1514; &#1504;&#1499;&#1505;&#1497;&#1501; &#1500;&#1492;&#1513;&#1511;&#1506;&#1492;.</p></div>
+      <div class="svc-card"><span class="svc-icon">&#128188;</span><div class="svc-name">&#1492;&#1499;&#1504;&#1492; &#1500;&#1508;&#1490;&#1497;&#1513;&#1492; &#1506;&#1501; &#1492;&#1489;&#1504;&#1511;</div><p class="svc-desc">&#1492;&#1499;&#1504;&#1492; &#1502;&#1500;&#1488;&#1492; &#1500;&#1508;&#1490;&#1497;&#1513;&#1492; &#1502;&#1493;&#1500; &#1492;&#1489;&#1504;&#1511; &#8212; &#1514;&#1497;&#1511; &#1502;&#1505;&#1502;&#1499;&#1497;&#1501;, &#1504;&#1514;&#1493;&#1504;&#1497;&#1501; &#1508;&#1497;&#1504;&#1504;&#1505;&#1497;&#1497;&#1501; &#1493;&#1488;&#1505;&#1496;&#1512;&#1496;&#1490;&#1497;&#1497;&#1514; &#1502;&#1493;"&#1502; &#1500;&#1492;&#1513;&#1497;&#1490; &#1514;&#1504;&#1488;&#1497;&#1501; &#1502;&#1497;&#1496;&#1489;&#1497;&#1497;&#1501;.</p></div>
       <div class="svc-card"><span class="svc-icon">&#129309;</span><div class="svc-name">&#1500;&#1497;&#1493;&#1493;&#1497; &#1502;&#1493;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501;</div><p class="svc-desc">&#1504;&#1497;&#1492;&#1493;&#1500; &#1502;&#1493;"&#1502; &#1502;&#1493;&#1500; &#1499;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501; &#1500;&#1492;&#1513;&#1490;&#1514; &#1492;&#1514;&#1504;&#1488;&#1497;&#1501; &#1492;&#1496;&#1493;&#1489;&#1497;&#1501; &#1489;&#1497;&#1493;&#1514;&#1512; &#1506;&#1489;&#1493;&#1512;&#1499;&#1501;.</p></div>
     </div>
   </div>
@@ -347,19 +348,21 @@ document.getElementById('footer-logo').src = 'https://raw.githubusercontent.com/
 
 
 function submitForm() {
-  const fields = document.querySelectorAll('#formArea input, #formArea select, #formArea textarea');
-  const name = fields[0] ? fields[0].value : '';
-  const phone = fields[1] ? fields[1].value : '';
-  const subject = fields[2] ? fields[2].value : '';
-  const message = fields[3] ? fields[3].value : '';
-  if (!name || !phone) { alert('אנא מלאו שם וטלפון'); return; }
-  const body = encodeURIComponent('שם: '+name+'
-טלפון: '+phone+'
-נושא: '+subject+'
-הודעה: '+message);
-  window.open('mailto:adir2112@gmail.com?subject='+encodeURIComponent('בקשת ייעוץ - '+name)+'&body='+body);
-  document.getElementById('formArea').style.display = 'none';
-  document.getElementById('formSuccess').classList.add('show');
+  var nameEl = document.querySelector('#formArea input[type=text]');
+  var phoneEl = document.querySelector('#formArea input[type=tel]');
+  var subjectEl = document.querySelector('#formArea select');
+  var msgEl = document.querySelector('#formArea textarea');
+  var name = nameEl ? nameEl.value : '';
+  var phone = phoneEl ? phoneEl.value : '';
+  var subject = subjectEl ? subjectEl.value : '';
+  var msg = msgEl ? msgEl.value : '';
+  if (!name || !phone) { alert('נא למלא שם וטלפון'); return; }
+  var body = 'שם: ' + name + '%0Aטלפון: ' + phone + '%0Aנושא: ' + subject + '%0Aהודעה: ' + msg;
+  window.location.href = 'mailto:adir2112@gmail.com?subject=בקשת ייעוץ - ' + name + '&body=' + body;
+  setTimeout(function(){
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }, 500);
 }
 
 const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIn
