@@ -4,969 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A.L &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; | &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-dark: #A07830;
-    --black: #0A0A0A;
-    --dark: #111111;
-    --dark2: #1A1A1A;
-    --white: #FFFFFF;
-    --off-white: #F8F5F0;
-    --gray: #888888;
-    --light-gray: #E8E4DF;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Heebo', sans-serif;
-    background: var(--off-white);
-    color: var(--dark);
-    direction: rtl;
-  }
-
-  /* ===== NAV ===== */
-  nav {
-    position: fixed;
-    top: 0; right: 0; left: 0;
-    z-index: 1000;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .nav-logo img {
-    height: 48px;
-    width: 48px;
-    object-fit: contain;
-  }
-
-  .nav-logo-text {
-    font-family: 'Frank Ruhl Libre', serif;
-    color: var(--gold);
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 400;
-    transition: color 0.3s;
-    letter-spacing: 0.02em;
-  }
-
-  .nav-links a:hover { color: var(--gold); }
-
-  .nav-cta {
-    background: var(--gold);
-    color: var(--black) !important;
-    padding: 0.5rem 1.25rem;
-    border-radius: 4px;
-    font-weight: 600 !important;
-    transition: background 0.3s !important;
-  }
-
-  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
-
-  /* ===== HERO ===== */
-  #hero {
-    min-height: 100vh;
-    background: var(--dark);
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    padding-top: 70px;
-  }
-
-  .hero-bg-pattern {
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%);
-  }
-
-  .hero-grid-lines {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    width: 100%;
-  }
-
-  .hero-text { animation: fadeInRight 1s ease both; }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gold);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-  }
-
-  .hero-title {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-
-  .hero-title span {
-    color: var(--gold);
-    display: block;
-  }
-
-  .hero-subtitle {
-    font-size: 1.15rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--gold);
-    color: var(--black);
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Heebo', sans-serif;
-  }
-
-  .btn-primary:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(201,168,76,0.35);
-  }
-
-  .btn-secondary {
-    border: 1px solid rgba(255,255,255,0.3);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-  }
-
-  .hero-image {
-    position: relative;
-    animation: fadeInLeft 1s ease 0.3s both;
-    text-align: center;
-  }
-
-  .hero-image-wrapper {
-    position: relative;
-    display: inline-block;
-  }
-
-  .hero-image img {
-    width: 100%;
-    max-width: 420px;
-    border-radius: 12px;
-    position: relative;
-    z-index: 2;
-    object-fit: cover;
-  }
-
-  .hero-image-glow {
-    position: absolute;
-    inset: -20px;
-    background: radial-gradient(ellipse, rgba(201,168,76,0.2) 0%, transparent 70%);
-    z-index: 1;
-  }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .stat-item { text-align: center; }
-
-  .stat-number {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--gold);
-    display: block;
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.5);
-    margin-top: 0.3rem;
-    display: block;
-  }
-
-  /* ===== SECTION COMMON ===== */
-  section { padding: 6rem 2rem; }
-
-  .section-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .section-label {
-    display: inline-block;
-    color: var(--gold);
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-
-  .section-title {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    font-weight: 700;
-    color: var(--dark);
-    line-height: 1.2;
-  }
-
-  .section-title.light { color: var(--white); }
-
-  .gold-line {
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    margin: 1.5rem auto 0;
-    border-radius: 2px;
-  }
-
-  /* ===== SERVICES ===== */
-  #services { background: var(--off-white); }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .service-card {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 2.5rem 2rem;
-    border: 1px solid var(--light-gray);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 4px;
-    height: 0;
-    background: linear-gradient(180deg, var(--gold), var(--gold-light));
-    transition: height 0.4s ease;
-  }
-
-  .service-card:hover::before { height: 100%; }
-
-  .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    border-color: rgba(201,168,76,0.3);
-  }
-
-  .service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.25rem;
-    display: block;
-  }
-
-  .service-name {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 0.75rem;
-  }
-
-  .service-desc {
-    color: var(--gray);
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  /* ===== ABOUT ===== */
-  #about { background: var(--dark); }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .about-image-side {
-    position: relative;
-  }
-
-  .about-photo-frame {
-    position: relative;
-    display: inline-block;
-  }
-
-  .about-photo-frame img {
-    width: 100%;
-    max-width: 380px;
-    border-radius: 10px;
-    position: relative;
-    z-index: 2;
-    display: block;
-  }
-
-  .about-photo-border {
-    position: absolute;
-    top: 20px;
-    right: -20px;
-    left: 20px;
-    bottom: -20px;
-    border: 2px solid rgba(201,168,76,0.4);
-    border-radius: 10px;
-    z-index: 1;
-  }
-
-  .about-content .section-title { text-align: right; color: var(--white); }
-  .about-content .gold-line { margin: 1.5rem 0 0; }
-  .about-content .section-label { text-align: right; display: block; }
-
-  .about-text {
-    color: rgba(255,255,255,0.7);
-    font-size: 1.05rem;
-    line-height: 1.85;
-    margin-top: 1.5rem;
-  }
-
-  .about-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .about-feature {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .about-feature-icon {
-    color: var(--gold);
-    font-size: 1.1rem;
-    margin-top: 2px;
-    flex-shrink: 0;
-  }
-
-  .about-feature-text {
-    color: rgba(255,255,255,0.8);
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  /* ===== CALCULATOR ===== */
-  #calculator { background: var(--off-white); }
-
-  .calc-wrapper {
-    max-width: 700px;
-    margin: 0 auto;
-    background: var(--white);
-    border-radius: 16px;
-    padding: 3rem;
-    box-shadow: 0 10px 50px rgba(0,0,0,0.08);
-    border: 1px solid var(--light-gray);
-  }
-
-  .calc-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .calc-field label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--dark);
-    margin-bottom: 0.5rem;
-  }
-
-  .calc-field input, .calc-field select {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    border: 1.5px solid var(--light-gray);
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: 'Heebo', sans-serif;
-    color: var(--dark);
-    background: var(--off-white);
-    transition: border-color 0.3s;
-    direction: rtl;
-  }
-
-  .calc-field input:focus, .calc-field select:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: var(--white);
-  }
-
-  .calc-btn {
-    width: 100%;
-    padding: 1.1rem;
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    border-radius: 8px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    font-family: 'Heebo', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 0.5rem;
-  }
-
-  .calc-btn:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(201,168,76,0.3);
-  }
-
-  .calc-result {
-    display: none;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: var(--dark);
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  .calc-result.show { display: block; animation: fadeInUp 0.4s ease; }
-
-  .result-label {
-    color: rgba(255,255,255,0.6);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .result-amount {
-    font-family: 'Frank Ruhl Libre', serif;
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--gold);
-  }
-
-  .result-note {
-    color: rgba(255,255,255,0.4);
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-  }
-
-  /* ===== REVIEWS ===== */
-  #reviews { background: var(--dark); }
-
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .review-card {
-    background: var(--dark2);
-    border-radius: 12px;
-    padding: 2rem;
-    border: 1px solid rgba(201,168,76,0.15);
-    transition: all 0.3s;
-  }
-
-  .review-card:hover {
-    border-color: rgba(201,168,76,0.4);
-    transform: translateY(-4px);
-  }
-
-  .review-stars {
-    color: var(--gold);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-  }
-
-  .review-text {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.95rem;
-    line-height: 1.75;
-    margin-bottom: 1.25rem;
-    font-style: italic;
-  }
-
-  .review-author {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .review-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: var(--black);
-    font-size: 0.9rem;
-    flex-shrink: 0;
-  }
-
-  .review-name {
-    color: var(--white);
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .review-source {
-    color: var(--gold);
-    font-size: 0.75rem;
-  }
-
-  /* ===== BLOG ===== */
-  #blog { background: var(--off-white); }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .blog-card {
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--light-gray);
-    transition: all 0.3s;
-  }
-
-  .blog-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-  }
-
-  .blog-card-header {
-    background: var(--dark);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .blog-card-header::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
-  }
-
-  .blog-category {
-    font-size: 0.75rem;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-  }
-
-  .blog-title {
-    font-family: 'Frank Ruhl Libre', serif;
-    color: var(--white);
-    font-size: 1.15rem;
-    font-weight: 700;
-    line-height: 1.4;
-  }
-
-  .blog-body {
-    padding: 1.5rem 2rem 2rem;
-  }
-
-  .blog-excerpt {
-    color: var(--gray);
-    font-size: 0.9rem;
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-  }
-
-  .blog-link {
-    color: var(--gold);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: gap 0.2s;
-  }
-
-  .blog-link:hover { gap: 8px; }
-
-  /* ===== CONTACT ===== */
-  #contact { background: var(--dark); }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 5rem;
-    align-items: start;
-  }
-
-  .contact-info .section-title { color: var(--white); text-align: right; }
-  .contact-info .section-label { text-align: right; display: block; }
-  .contact-info .gold-line { margin: 1.5rem 0 0; }
-
-  .contact-desc {
-    color: rgba(255,255,255,0.6);
-    margin-top: 1.5rem;
-    line-height: 1.7;
-    font-size: 1rem;
-  }
-
-  .contact-details {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-
-  .contact-item:hover { color: var(--gold); }
-
-  .contact-item-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    background: rgba(201,168,76,0.1);
-    border: 1px solid rgba(201,168,76,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    transition: all 0.3s;
-  }
-
-  .contact-item:hover .contact-item-icon {
-    background: rgba(201,168,76,0.2);
-    border-color: var(--gold);
-  }
-
-  /* Contact Form */
-  .contact-form {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,168,76,0.15);
-    border-radius: 16px;
-    padding: 2.5rem;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .form-field {
-    margin-bottom: 1rem;
-  }
-
-  .form-field label {
-    display: block;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 0.5rem;
-  }
-
-  .form-field input, .form-field select, .form-field textarea {
-    width: 100%;
-    padding: 0.9rem 1rem;
-    background: rgba(255,255,255,0.05);
-    border: 1.5px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    color: var(--white);
-    font-family: 'Heebo', sans-serif;
-    font-size: 0.95rem;
-    transition: border-color 0.3s;
-    direction: rtl;
-  }
-
-  .form-field input::placeholder, .form-field textarea::placeholder {
-    color: rgba(255,255,255,0.25);
-  }
-
-  .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-  }
-
-  .form-field textarea { height: 120px; resize: vertical; }
-
-  .form-field select option { background: var(--dark); color: var(--white); }
-
-  .form-submit {
-    width: 100%;
-    padding: 1.1rem;
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    border-radius: 8px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    font-family: 'Heebo', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 0.5rem;
-  }
-
-  .form-submit:hover {
-    background: var(--gold-light);
-    box-shadow: 0 6px 25px rgba(201,168,76,0.35);
-  }
-
-  .form-success {
-    display: none;
-    text-align: center;
-    padding: 2rem;
-  }
-
-  .form-success.show { display: block; animation: fadeInUp 0.4s ease; }
-  .form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
-  .form-success-text { color: var(--gold); font-size: 1.2rem; font-weight: 700; }
-  .form-success-sub { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 0.5rem; }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--black);
-    border-top: 1px solid rgba(201,168,76,0.2);
-    padding: 2.5rem 2rem;
-    text-align: center;
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .footer-logo img { height: 40px; object-fit: contain; }
-
-  .footer-copy {
-    color: rgba(255,255,255,0.3);
-    font-size: 0.85rem;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s;
-  }
-
-  .footer-links a:hover { color: var(--gold); }
-
-  /* ===== WHATSAPP FLOAT ===== */
-  .wa-float {
-    position: fixed;
-    bottom: 2rem;
-    left: 2rem;
-    width: 58px;
-    height: 58px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
-    z-index: 999;
-    text-decoration: none;
-    transition: all 0.3s;
-    font-size: 1.6rem;
-  }
-
-  .wa-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 25px rgba(37,211,102,0.7);
-  }
-
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-
-  @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ===== SCROLL REVEAL ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 768px) {
-    nav { padding: 0 1rem; }
-    .nav-links { display: none; }
-
-    .hero-content {
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: 2rem;
-    }
-
-    .hero-image { order: -1; }
-    .hero-buttons { justify-content: center; }
-    .hero-stats { margin-top: 2rem; }
-
-    .about-grid,
-    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-
-    .about-image-side { display: none; }
-
-    .form-row { grid-template-columns: 1fr; }
-    .calc-row { grid-template-columns: 1fr; }
-
-    section { padding: 4rem 1.25rem; }
-
-    .footer-inner { flex-direction: column; text-align: center; }
-
-    .about-features { grid-template-columns: 1fr; }
-  }
+:root{--gold:#C9A84C;--gold-light:#E8C97A;--black:#0A0A0A;--dark:#111;--dark2:#1A1A1A;--white:#fff;--off:#F8F5F0;--gray:#888;--light:#E8E4DF}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Heebo',sans-serif;background:var(--off);color:var(--dark);direction:rtl}
+nav{position:fixed;top:0;right:0;left:0;z-index:1000;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.2);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{height:48px;width:48px;object-fit:contain}
+.nav-logo-text{font-family:'Frank Ruhl Libre',serif;color:var(--gold);font-size:1.1rem;font-weight:700;line-height:1.2}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:.5rem 1.25rem;border-radius:4px;font-weight:700!important}
+#hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;overflow:hidden;padding-top:70px;position:relative}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,.08),transparent 60%)}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:.4rem 1rem;border-radius:50px;font-size:.85rem;margin-bottom:1.5rem}
+.hero-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--white);line-height:1.1;margin-bottom:1rem}
+.hero-title span{color:var(--gold);display:block}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:2.5rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--black);padding:1rem 2rem;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .3s;font-family:'Heebo',sans-serif;display:inline-block}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline{border:1px solid rgba(255,255,255,.3);color:var(--white);padding:1rem 2rem;border-radius:6px;font-size:1rem;text-decoration:none;transition:all .3s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-img{text-align:center}
+.hero-img img{width:100%;max-width:420px;border-radius:12px;position:relative;z-index:2}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.stat-num{font-family:'Frank Ruhl Libre',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block}
+.stat-lbl{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.3rem;display:block}
+section{padding:6rem 2rem}
+.sec-inner{max-width:1200px;margin:0 auto}
+.sec-header{text-align:center;margin-bottom:4rem}
+.sec-label{display:inline-block;color:var(--gold);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem;font-weight:500}
+.sec-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:var(--dark);line-height:1.2}
+.sec-title.light{color:var(--white)}
+.gold-line{width:60px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin:1.5rem auto 0;border-radius:2px}
+#services{background:var(--off)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.svc-card{background:var(--white);border-radius:12px;padding:2.5rem 2rem;border:1px solid var(--light);transition:all .4s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;right:0;width:4px;height:0;background:linear-gradient(180deg,var(--gold),var(--gold-light));transition:height .4s}
+.svc-card:hover::before{height:100%}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.svc-icon{font-size:2.5rem;margin-bottom:1.25rem;display:block}
+.svc-name{font-family:'Frank Ruhl Libre',serif;font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:.75rem}
+.svc-desc{color:var(--gray);font-size:.95rem;line-height:1.7}
+#about{background:var(--dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:center}
+.about-frame{position:relative;display:inline-block}
+.about-frame img{width:100%;max-width:380px;border-radius:10px;display:block;position:relative;z-index:2}
+.about-border{position:absolute;top:20px;right:-20px;left:20px;bottom:-20px;border:2px solid rgba(201,168,76,.4);border-radius:10px;z-index:1}
+.about-text{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.85;margin-top:1.5rem}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.about-feat{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.8);font-size:.9rem}
+.about-feat-icon{color:var(--gold);flex-shrink:0}
+#calculator{background:var(--off)}
+.calc-wrap{max-width:700px;margin:0 auto;background:var(--white);border-radius:16px;padding:3rem;box-shadow:0 10px 50px rgba(0,0,0,.08);border:1px solid var(--light)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+.calc-field label{display:block;font-size:.9rem;font-weight:600;margin-bottom:.5rem}
+.calc-field input,.calc-field select{width:100%;padding:.85rem 1rem;border:1.5px solid var(--light);border-radius:8px;font-size:1rem;font-family:'Heebo',sans-serif;background:var(--off);transition:border-color .3s;direction:rtl}
+.calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--gold)}
+.calc-btn{width:100%;padding:1.1rem;background:var(--gold);color:var(--black);border:none;border-radius:8px;font-size:1.05rem;font-weight:700;font-family:'Heebo',sans-serif;cursor:pointer;transition:all .3s}
+.calc-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
+.calc-result{display:none;margin-top:2rem;padding:1.5rem;background:var(--dark);border-radius:10px;text-align:center}
+.calc-result.show{display:block}
+.result-lbl{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:.5rem}
+.result-amt{font-family:'Frank Ruhl Libre',serif;font-size:2.5rem;font-weight:900;color:var(--gold)}
+#reviews{background:var(--dark)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.rev-card{background:var(--dark2);border-radius:12px;padding:2rem;border:1px solid rgba(201,168,76,.15);transition:all .3s}
+.rev-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-4px)}
+.rev-stars{color:var(--gold);font-size:1.1rem;margin-bottom:1rem;letter-spacing:2px}
+.rev-text{color:rgba(255,255,255,.75);font-size:.95rem;line-height:1.75;margin-bottom:1.25rem;font-style:italic}
+.rev-author{display:flex;align-items:center;gap:10px}
+.rev-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#A07830);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--black);font-size:.9rem;flex-shrink:0}
+.rev-name{color:var(--white);font-weight:600;font-size:.9rem}
+.rev-src{color:var(--gold);font-size:.75rem}
+#blog{background:var(--off)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.blog-card{background:var(--white);border-radius:12px;overflow:hidden;border:1px solid var(--light);transition:all .3s}
+.blog-card:hover{transform:translateY(-6px);box-shadow:0 15px 40px rgba(0,0,0,.1)}
+.blog-head{background:var(--dark);padding:2rem;border-bottom:3px solid var(--gold)}
+.blog-cat{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.blog-title2{font-family:'Frank Ruhl Libre',serif;color:var(--white);font-size:1.15rem;font-weight:700;line-height:1.4}
+.blog-body{padding:1.5rem 2rem 2rem}
+.blog-exc{color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.25rem}
+.blog-link{color:var(--gold);text-decoration:none;font-weight:600;font-size:.9rem}
+#contact{background:var(--dark)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
+.contact-desc{color:rgba(255,255,255,.6);margin-top:1.5rem;line-height:1.7}
+.contact-details{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.25rem}
+.contact-item{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.8);text-decoration:none;font-size:1rem;transition:color .3s}
+.contact-item:hover{color:var(--gold)}
+.contact-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-form-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.15);border-radius:16px;padding:2.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-field{margin-bottom:1rem}
+.form-field label{display:block;font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:.5rem}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:.9rem 1rem;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:8px;color:var(--white);font-family:'Heebo',sans-serif;font-size:.95rem;transition:border-color .3s;direction:rtl}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:none;border-color:var(--gold)}
+.form-field textarea{height:120px;resize:vertical}
+.form-field select option{background:var(--dark)}
+.form-submit{width:100%;padding:1.1rem;background:var(--gold);color:var(--black);border:none;border-radius:8px;font-size:1.05rem;font-weight:700;font-family:'Heebo',sans-serif;cursor:pointer;transition:all .3s}
+.form-submit:hover{background:var(--gold-light)}
+.form-success{display:none;text-align:center;padding:2rem}
+.form-success.show{display:block}
+footer{background:var(--black);border-top:1px solid rgba(201,168,76,.2);padding:2.5rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo img{height:40px;object-fit:contain}
+.footer-copy{color:rgba(255,255,255,.3);font-size:.85rem}
+.footer-links{display:flex;gap:1.5rem;list-style:none}
+.footer-links a{color:rgba(255,255,255,.4);text-decoration:none;font-size:.85rem;transition:color .3s}
+.footer-links a:hover{color:var(--gold)}
+.wa-float{position:fixed;bottom:2rem;left:2rem;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);z-index:999;text-decoration:none;transition:all .3s;font-size:1.6rem}
+.wa-float:hover{transform:scale(1.1)}
+@media(max-width:768px){.nav-links{display:none}.hero-content,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-img{order:-1}.about-frame{display:none}.form-row,.calc-row{grid-template-columns:1fr}section{padding:4rem 1.25rem}.footer-inner{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img id="nav-logo-img" src="" alt="A.L &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514;">
-    <div class="nav-logo-text">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;<br><span style="font-size:0.75rem;font-weight:300;color:rgba(201,168,76,0.7)">&#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514;</span></div>
+    <img id="logo-img" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png" alt="A.L">
+    <div class="nav-logo-text">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;<br><span style="font-size:.75rem;font-weight:300;color:rgba(201,168,76,.7)">&#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514;</span></div>
   </div>
   <ul class="nav-links">
     <li><a href="#services">&#1513;&#1497;&#1512;&#1493;&#1514;&#1497;&#1501;</a></li>
@@ -978,334 +139,172 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-grid-lines"></div>
+  <div class="hero-bg"></div>
   <div class="hero-content">
-    <div class="hero-text">
+    <div>
       <div class="hero-badge">&#10022; &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1511;&#1510;&#1493;&#1506;&#1497;</div>
-      <h1 class="hero-title">
-        &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1492;&#1504;&#1499;&#1493;&#1504;&#1492;<br>
-        <span>&#1502;&#1514;&#1495;&#1497;&#1500;&#1492; &#1499;&#1488;&#1503;</span>
-      </h1>
-      <p class="hero-subtitle">
-        &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497; &#8212; &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498; &#1513;&#1502;&#1500;&#1493;&#1493;&#1492; &#1488;&#1514;&#1499;&#1501; &#1489;&#1499;&#1500; &#1513;&#1500;&#1489;.<br>
-        &#1514;&#1499;&#1504;&#1493;&#1503;, &#1497;&#1497;&#1506;&#1493;&#1509; &#1493;&#1500;&#1497;&#1493;&#1493;&#1497; &#1488;&#1497;&#1513;&#1497; &#8212; &#1499;&#1491;&#1497; &#1513;&#1514;&#1511;&#1489;&#1500;&#1493; &#1488;&#1514; &#1492;&#1506;&#1505;&#1511;&#1492; &#1492;&#1496;&#1493;&#1489;&#1492; &#1489;&#1497;&#1493;&#1514;&#1512;.
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">&#128222; &#1500;&#1511;&#1489;&#1500;&#1514; &#1497;&#1497;&#1506;&#1493;&#1509; &#1512;&#1488;&#1513;&#1493;&#1504;&#1497; &#1495;&#1497;&#1504;&#1501;</a>
-        <a href="#calculator" class="btn-secondary">&#1502;&#1495;&#1513;&#1489;&#1493;&#1503; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</a>
+      <h1 class="hero-title">&#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1492;&#1504;&#1499;&#1493;&#1504;&#1492;<br><span>&#1502;&#1514;&#1495;&#1497;&#1500;&#1492; &#1499;&#1488;&#1503;</span></h1>
+      <p class="hero-sub">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497; &#8212; &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498; &#1513;&#1502;&#1500;&#1493;&#1493;&#1492; &#1488;&#1514;&#1499;&#1501; &#1489;&#1499;&#1500; &#1513;&#1500;&#1489;.<br>&#1514;&#1499;&#1504;&#1493;&#1503;, &#1497;&#1497;&#1506;&#1493;&#1509; &#1493;&#1500;&#1497;&#1493;&#1493;&#1497; &#1488;&#1497;&#1513;&#1497; &#8212; &#1499;&#1491;&#1497; &#1513;&#1514;&#1511;&#1489;&#1500;&#1493; &#1488;&#1514; &#1492;&#1506;&#1505;&#1511;&#1492; &#1492;&#1496;&#1493;&#1489;&#1492; &#1489;&#1497;&#1493;&#1514;&#1512;.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">&#128222; &#1497;&#1497;&#1506;&#1493;&#1509; &#1512;&#1488;&#1513;&#1493;&#1504;&#1497; &#1495;&#1497;&#1504;&#1501;</a>
+        <a href="#calculator" class="btn-outline">&#1502;&#1495;&#1513;&#1489;&#1493;&#1503; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</a>
       </div>
       <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">&#1500;&#1511;&#1493;&#1495;&#1493;&#1514; &#1502;&#1512;&#1493;&#1510;&#1497;&#1501;</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">&#1513;&#1504;&#1493;&#1514; &#1504;&#1497;&#1505;&#1497;&#1493;&#1503;</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">&#1502;&#1511;&#1510;&#1493;&#1506;&#1497;&#1493;&#1514; &#1493;&#1488;&#1502;&#1497;&#1504;&#1493;&#1514;</span>
-        </div>
+        <div style="text-align:center"><span class="stat-num">500+</span><span class="stat-lbl">&#1500;&#1511;&#1493;&#1495;&#1493;&#1514; &#1502;&#1512;&#1493;&#1510;&#1497;&#1501;</span></div>
+        <div style="text-align:center"><span class="stat-num">10+</span><span class="stat-lbl">&#1513;&#1504;&#1493;&#1514; &#1504;&#1497;&#1505;&#1497;&#1493;&#1503;</span></div>
+        <div style="text-align:center"><span class="stat-num">100%</span><span class="stat-lbl">&#1502;&#1511;&#1510;&#1493;&#1506;&#1497;&#1493;&#1514;</span></div>
       </div>
     </div>
-    <div class="hero-image">
-      <div class="hero-image-wrapper">
-        <div class="hero-image-glow"></div>
-        <img id="hero-photo" src="" alt="&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;">
-      </div>
+    <div class="hero-img">
+      <img id="photo-img" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg" alt="&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;">
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">&#1502;&#1492; &#1488;&#1504;&#1495;&#1504;&#1493; &#1502;&#1510;&#1497;&#1506;&#1497;&#1501;</span>
-      <h2 class="section-title">&#1492;&#1513;&#1497;&#1512;&#1493;&#1514;&#1497;&#1501; &#1513;&#1500;&#1504;&#1493;</h2>
+  <div class="sec-inner">
+    <div class="sec-header">
+      <span class="sec-label">&#1502;&#1492; &#1488;&#1504;&#1495;&#1504;&#1493; &#1502;&#1510;&#1497;&#1506;&#1497;&#1501;</span>
+      <h2 class="sec-title">&#1492;&#1513;&#1497;&#1512;&#1493;&#1514;&#1497;&#1501; &#1513;&#1500;&#1504;&#1493;</h2>
       <div class="gold-line"></div>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-icon">&#127968;</span>
-        <div class="service-name">&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1500;&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492;</div>
-        <p class="service-desc">&#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1500;&#1488; &#1493;&#1502;&#1511;&#1497;&#1507; &#1500;&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1512;&#1488;&#1513;&#1493;&#1504;&#1492; &#1488;&#1493; &#1513;&#1504;&#1497;&#1497;&#1492; &#8212; &#1502;&#1504;&#1497;&#1514;&#1493;&#1495; &#1492;&#1510;&#1512;&#1499;&#1497;&#1501; &#1493;&#1506;&#1491; &#1500;&#1495;&#1514;&#1497;&#1502;&#1492;.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">&#128260;</span>
-        <div class="service-name">&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</div>
-        <p class="service-desc">&#1489;&#1491;&#1497;&#1511;&#1492; &#1492;&#1488;&#1501; &#1499;&#1491;&#1488;&#1497; &#1500;&#1502;&#1495;&#1494;&#1512; &#1488;&#1514; &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1492;&#1511;&#1497;&#1497;&#1502;&#1514; &#1500;&#1514;&#1504;&#1488;&#1497;&#1501; &#1496;&#1493;&#1489;&#1497;&#1501; &#1497;&#1493;&#1514;&#1512; &#1493;&#1495;&#1497;&#1505;&#1499;&#1493;&#1503; &#1502;&#1513;&#1502;&#1506;&#1493;&#1514;&#1497; &#1489;&#1512;&#1497;&#1489;&#1497;&#1514;.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">&#128202;</span>
-        <div class="service-name">&#1514;&#1499;&#1504;&#1493;&#1503; &#1508;&#1497;&#1504;&#1504;&#1505;&#1497;</div>
-        <p class="service-desc">&#1489;&#1504;&#1497;&#1497;&#1514; &#1514;&#1502;&#1492;&#1497;&#1500; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1488;&#1493;&#1508;&#1496;&#1497;&#1502;&#1500;&#1497; &#1492;&#1502;&#1493;&#1514;&#1488;&#1501; &#1488;&#1497;&#1513;&#1497;&#1514; &#1500;&#1502;&#1510;&#1489;&#1499;&#1501; &#1492;&#1508;&#1497;&#1504;&#1504;&#1505;&#1497; &#1493;&#1500;&#1502;&#1496;&#1512;&#1493;&#1514; &#1513;&#1500;&#1499;&#1501;.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">&#127959;&#65039;</span>
-        <div class="service-name">&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1500;&#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;</div>
-        <p class="service-desc">&#1500;&#1497;&#1493;&#1493;&#1497; &#1502;&#1500;&#1488; &#1500;&#1508;&#1512;&#1493;&#1497;&#1511;&#1496;&#1497;&#1501; &#1513;&#1500; &#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;, &#1499;&#1493;&#1500;&#1500; &#1504;&#1497;&#1492;&#1493;&#1500; &#1513;&#1500;&#1489;&#1497; &#1492;&#1502;&#1513;&#1497;&#1499;&#1492; &#1502;&#1492;&#1489;&#1504;&#1511;.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">&#128188;</span>
-        <div class="service-name">&#1497;&#1497;&#1506;&#1493;&#1509; &#1500;&#1492;&#1513;&#1511;&#1506;&#1493;&#1514; &#1504;&#1491;&#1500;"&#1503;</div>
-        <p class="service-desc">&#1489;&#1495;&#1497;&#1504;&#1514; &#1499;&#1491;&#1488;&#1497;&#1493;&#1514; &#1493;&#1502;&#1489;&#1504;&#1492; &#1502;&#1497;&#1502;&#1493;&#1503; &#1488;&#1493;&#1508;&#1496;&#1497;&#1502;&#1500;&#1497; &#1500;&#1512;&#1499;&#1497;&#1513;&#1514; &#1504;&#1499;&#1505;&#1497;&#1501; &#1500;&#1492;&#1513;&#1511;&#1506;&#1492;.</p>
-      </div>
-      <div class="service-card reveal">
-        <span class="service-icon">&#129309;</span>
-        <div class="service-name">&#1500;&#1497;&#1493;&#1493;&#1497; &#1502;&#1493;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501;</div>
-        <p class="service-desc">&#1504;&#1497;&#1492;&#1493;&#1500; &#1502;&#1493;"&#1502; &#1502;&#1493;&#1500; &#1499;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501; &#1500;&#1492;&#1513;&#1490;&#1514; &#1492;&#1514;&#1504;&#1488;&#1497;&#1501; &#1492;&#1496;&#1493;&#1489;&#1497;&#1501; &#1489;&#1497;&#1493;&#1514;&#1512; &#1506;&#1489;&#1493;&#1512;&#1499;&#1501;.</p>
-      </div>
+      <div class="svc-card"><span class="svc-icon">&#127968;</span><div class="svc-name">&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1500;&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492;</div><p class="svc-desc">&#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1500;&#1488; &#1493;&#1502;&#1511;&#1497;&#1507; &#1500;&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1512;&#1488;&#1513;&#1493;&#1504;&#1492; &#1488;&#1493; &#1513;&#1504;&#1497;&#1492; &#8212; &#1502;&#1504;&#1497;&#1514;&#1493;&#1495; &#1492;&#1510;&#1512;&#1499;&#1497;&#1501; &#1493;&#1506;&#1491; &#1500;&#1495;&#1514;&#1497;&#1502;&#1492;.</p></div>
+      <div class="svc-card"><span class="svc-icon">&#128260;</span><div class="svc-name">&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</div><p class="svc-desc">&#1489;&#1491;&#1497;&#1511;&#1492; &#1492;&#1488;&#1501; &#1499;&#1491;&#1488;&#1497; &#1500;&#1502;&#1495;&#1494;&#1512; &#1488;&#1514; &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1492;&#1511;&#1497;&#1497;&#1502;&#1514; &#1500;&#1514;&#1504;&#1488;&#1497;&#1501; &#1496;&#1493;&#1489;&#1497;&#1501; &#1497;&#1493;&#1514;&#1512; &#1493;&#1495;&#1497;&#1505;&#1499;&#1493;&#1503; &#1502;&#1513;&#1502;&#1506;&#1493;&#1514;&#1497;.</p></div>
+      <div class="svc-card"><span class="svc-icon">&#128202;</span><div class="svc-name">&#1514;&#1499;&#1504;&#1493;&#1503; &#1508;&#1497;&#1504;&#1504;&#1505;&#1497;</div><p class="svc-desc">&#1489;&#1504;&#1497;&#1497;&#1514; &#1514;&#1502;&#1492;&#1497;&#1500; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1488;&#1493;&#1508;&#1496;&#1497;&#1502;&#1500;&#1497; &#1492;&#1502;&#1493;&#1514;&#1488;&#1501; &#1488;&#1497;&#1513;&#1497;&#1514; &#1500;&#1502;&#1510;&#1489;&#1499;&#1501; &#1492;&#1508;&#1497;&#1504;&#1504;&#1505;&#1497;.</p></div>
+      <div class="svc-card"><span class="svc-icon">&#127959;&#65039;</span><div class="svc-name">&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1500;&#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;</div><p class="svc-desc">&#1500;&#1497;&#1493;&#1493;&#1497; &#1502;&#1500;&#1488; &#1500;&#1508;&#1512;&#1493;&#1497;&#1511;&#1496;&#1497;&#1501; &#1513;&#1500; &#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;, &#1499;&#1493;&#1500;&#1500; &#1504;&#1497;&#1492;&#1493;&#1500; &#1513;&#1500;&#1489;&#1497; &#1492;&#1502;&#1513;&#1497;&#1499;&#1492; &#1502;&#1492;&#1489;&#1504;&#1511;.</p></div>
+      <div class="svc-card"><span class="svc-icon">&#128188;</span><div class="svc-name">&#1497;&#1497;&#1506;&#1493;&#1509; &#1500;&#1492;&#1513;&#1511;&#1506;&#1493;&#1514; &#1504;&#1491;&#1500;"&#1503;</div><p class="svc-desc">&#1489;&#1495;&#1497;&#1504;&#1514; &#1499;&#1491;&#1488;&#1497;&#1493;&#1514; &#1493;&#1502;&#1489;&#1504;&#1492; &#1502;&#1497;&#1502;&#1493;&#1503; &#1488;&#1493;&#1508;&#1496;&#1497;&#1502;&#1500;&#1497; &#1500;&#1512;&#1499;&#1497;&#1513;&#1514; &#1504;&#1499;&#1505;&#1497;&#1501; &#1500;&#1492;&#1513;&#1511;&#1506;&#1492;.</p></div>
+      <div class="svc-card"><span class="svc-icon">&#129309;</span><div class="svc-name">&#1500;&#1497;&#1493;&#1493;&#1497; &#1502;&#1493;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501;</div><p class="svc-desc">&#1504;&#1497;&#1492;&#1493;&#1500; &#1502;&#1493;"&#1502; &#1502;&#1493;&#1500; &#1499;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501; &#1500;&#1492;&#1513;&#1490;&#1514; &#1492;&#1514;&#1504;&#1488;&#1497;&#1501; &#1492;&#1496;&#1493;&#1489;&#1497;&#1501; &#1489;&#1497;&#1493;&#1514;&#1512; &#1506;&#1489;&#1493;&#1512;&#1499;&#1501;.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="section-inner">
+  <div class="sec-inner">
     <div class="about-grid">
-      <div class="about-image-side reveal">
-        <div class="about-photo-frame">
-          <img id="about-photo" src="" alt="&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;">
-          <div class="about-photo-border"></div>
-        </div>
+      <div class="about-frame">
+        <img id="about-img" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg" alt="&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;">
+        <div class="about-border"></div>
       </div>
-      <div class="about-content reveal">
-        <span class="section-label">&#1502;&#1497; &#1488;&#1504;&#1497;</span>
-        <h2 class="section-title">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497; &#8212; &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498;</h2>
-        <div class="gold-line"></div>
-        <p class="about-text">
-          &#1513;&#1502;&#1497; &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;, &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498; &#1506;&#1501; &#1504;&#1497;&#1505;&#1497;&#1493;&#1503; &#1512;&#1489; &#1489;&#1514;&#1495;&#1493;&#1501; &#1492;&#1502;&#1497;&#1502;&#1493;&#1503; &#1492;&#1504;&#1491;&#1500;"&#1504;&#1497;. 
-          &#1488;&#1504;&#1497; &#1502;&#1500;&#1493;&#1493;&#1492; &#1500;&#1511;&#1493;&#1495;&#1493;&#1514; &#1500;&#1488;&#1493;&#1512;&#1498; &#1499;&#1500; &#1492;&#1514;&#1492;&#1500;&#1497;&#1498; &#8212; &#1502;&#1492;&#1512;&#1490;&#1506; &#1492;&#1512;&#1488;&#1513;&#1493;&#1503; &#1513;&#1489;&#1493; &#1502;&#1514;&#1506;&#1493;&#1512;&#1512;&#1514; &#1492;&#1502;&#1495;&#1513;&#1489;&#1492; &#1506;&#1500; &#1512;&#1499;&#1497;&#1513;&#1514; &#1504;&#1499;&#1505;, 
-          &#1493;&#1506;&#1491; &#1500;&#1511;&#1489;&#1500;&#1514; &#1492;&#1502;&#1508;&#1514;&#1495;.
-        </p>
-        <p class="about-text" style="margin-top: 1rem;">
-          &#1492;&#1490;&#1497;&#1513;&#1492; &#1513;&#1500;&#1497; &#1492;&#1497;&#1488; &#1488;&#1497;&#1513;&#1497;&#1514; &#1493;&#1502;&#1511;&#1510;&#1493;&#1506;&#1497;&#1514;: &#1499;&#1500; &#1500;&#1511;&#1493;&#1495; &#1502;&#1511;&#1489;&#1500; &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1493;&#1514;&#1488;&#1501; &#1500;&#1502;&#1510;&#1489;&#1493; &#1492;&#1505;&#1508;&#1510;&#1497;&#1508;&#1497;, 
-          &#1500;&#1500;&#1488; &#1500;&#1495;&#1510;&#1497;&#1501; &#1493;&#1489;&#1513;&#1511;&#1497;&#1508;&#1493;&#1514; &#1502;&#1500;&#1488;&#1492;. &#1492;&#1502;&#1496;&#1512;&#1492; &#1513;&#1500;&#1497; &#1492;&#1497;&#1488; &#1513;&#1514;&#1495;&#1505;&#1499;&#1493; &#1499;&#1505;&#1507; &#1493;&#1514;&#1492;&#1500;&#1497;&#1498; &#8212; &#1493;&#1514;&#1499;&#1504;&#1505;&#1493; &#1500;&#1489;&#1497;&#1514; &#1492;&#1495;&#1491;&#1513; &#1513;&#1500;&#1499;&#1501; &#1489;&#1489;&#1497;&#1496;&#1495;&#1493;&#1503;.
-        </p>
+      <div>
+        <span class="sec-label">&#1502;&#1497; &#1488;&#1504;&#1497;</span>
+        <h2 class="sec-title light">&#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497; &#8212; &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498;</h2>
+        <div class="gold-line" style="margin:1.5rem 0 0"></div>
+        <p class="about-text">&#1513;&#1502;&#1497; &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;, &#1497;&#1493;&#1506;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#1502;&#1493;&#1505;&#1502;&#1498; &#1506;&#1501; &#1504;&#1497;&#1505;&#1497;&#1493;&#1503; &#1512;&#1489; &#1489;&#1514;&#1495;&#1493;&#1501; &#1492;&#1502;&#1497;&#1502;&#1493;&#1503; &#1492;&#1504;&#1491;&#1500;"&#1503;. &#1488;&#1504;&#1497; &#1502;&#1500;&#1493;&#1493;&#1492; &#1500;&#1511;&#1493;&#1495;&#1493;&#1514; &#1500;&#1488;&#1493;&#1512;&#1498; &#1499;&#1500; &#1492;&#1514;&#1492;&#1500;&#1497;&#1498; &#8212; &#1502;&#1492;&#1512;&#1490;&#1506; &#1492;&#1512;&#1488;&#1513;&#1493;&#1503; &#1493;&#1506;&#1491; &#1511;&#1489;&#1500;&#1514; &#1492;&#1502;&#1508;&#1514;&#1495;.</p>
         <div class="about-features">
-          <div class="about-feature">
-            <span class="about-feature-icon">&#10003;</span>
-            <span class="about-feature-text">&#1497;&#1493;&#1506;&#1509; &#1502;&#1493;&#1505;&#1502;&#1498; &#1493;&#1502;&#1493;&#1512;&#1513;&#1492;</span>
-          </div>
-          <div class="about-feature">
-            <span class="about-feature-icon">&#10003;</span>
-            <span class="about-feature-text">&#1494;&#1502;&#1497;&#1504;&#1493;&#1514; &#1490;&#1489;&#1493;&#1492;&#1492; &#1493;&#1500;&#1497;&#1493;&#1493;&#1497; &#1488;&#1497;&#1513;&#1497;</span>
-          </div>
-          <div class="about-feature">
-            <span class="about-feature-icon">&#10003;</span>
-            <span class="about-feature-text">&#1506;&#1489;&#1493;&#1491;&#1492; &#1502;&#1493;&#1500; &#1499;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501;</span>
-          </div>
-          <div class="about-feature">
-            <span class="about-feature-icon">&#10003;</span>
-            <span class="about-feature-text">&#1513;&#1511;&#1497;&#1508;&#1493;&#1514; &#1493;&#1488;&#1502;&#1497;&#1504;&#1493;&#1514; &#1502;&#1500;&#1488;&#1492;</span>
-          </div>
-          <div class="about-feature">
-            <span class="about-feature-icon">&#10003;</span>
-            <span class="about-feature-text">&#1497;&#1497;&#1506;&#1493;&#1509; &#1512;&#1488;&#1513;&#1493;&#1504;&#1497; &#1495;&#1497;&#1504;&#1501;</span>
-          </div>
-          <div class="about-feature">
-            <span class="about-feature-icon">&#10003;</span>
-            <span class="about-feature-text">&#1504;&#1497;&#1505;&#1497;&#1493;&#1503; &#1506;&#1501; &#1502;&#1488;&#1493;&#1514; &#1502;&#1513;&#1508;&#1495;&#1493;&#1514;</span>
-          </div>
+          <div class="about-feat"><span class="about-feat-icon">&#10003;</span>&#1497;&#1493;&#1506;&#1509; &#1502;&#1493;&#1505;&#1502;&#1498; &#1493;&#1502;&#1493;&#1512;&#1513;&#1492;</div>
+          <div class="about-feat"><span class="about-feat-icon">&#10003;</span>&#1494;&#1502;&#1497;&#1504;&#1493;&#1514; &#1490;&#1489;&#1493;&#1492;&#1492; &#1493;&#1500;&#1497;&#1493;&#1493;&#1497; &#1488;&#1497;&#1513;&#1497;</div>
+          <div class="about-feat"><span class="about-feat-icon">&#10003;</span>&#1506;&#1489;&#1493;&#1491;&#1492; &#1502;&#1493;&#1500; &#1499;&#1500; &#1492;&#1489;&#1504;&#1511;&#1497;&#1501;</div>
+          <div class="about-feat"><span class="about-feat-icon">&#10003;</span>&#1513;&#1511;&#1497;&#1508;&#1493;&#1514; &#1493;&#1488;&#1502;&#1497;&#1504;&#1493;&#1514; &#1502;&#1500;&#1488;&#1492;</div>
+          <div class="about-feat"><span class="about-feat-icon">&#10003;</span>&#1497;&#1497;&#1506;&#1493;&#1509; &#1512;&#1488;&#1513;&#1493;&#1504;&#1497; &#1495;&#1497;&#1504;&#1501;</div>
+          <div class="about-feat"><span class="about-feat-icon">&#10003;</span>&#1504;&#1497;&#1505;&#1497;&#1493;&#1503; &#1506;&#1501; &#1502;&#1488;&#1493;&#1514; &#1502;&#1513;&#1508;&#1495;&#1493;&#1514;</div>
         </div>
-        <div style="margin-top:2.5rem">
-          <a href="#contact" class="btn-primary">&#1511;&#1489;&#1506;&#1493; &#1508;&#1490;&#1497;&#1513;&#1514; &#1497;&#1497;&#1506;&#1493;&#1509; &larr;</a>
-        </div>
+        <div style="margin-top:2.5rem"><a href="#contact" class="btn-gold">&#1511;&#1489;&#1506;&#1493; &#1508;&#1490;&#1497;&#1513;&#1514; &#1497;&#1497;&#1506;&#1493;&#1509; &larr;</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CALCULATOR -->
 <section id="calculator">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">&#1499;&#1500;&#1497; &#1513;&#1497;&#1502;&#1493;&#1513;&#1497;</span>
-      <h2 class="section-title">&#1502;&#1495;&#1513;&#1489;&#1493;&#1503; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</h2>
+  <div class="sec-inner">
+    <div class="sec-header">
+      <span class="sec-label">&#1499;&#1500;&#1497; &#1513;&#1497;&#1502;&#1493;&#1513;&#1497;</span>
+      <h2 class="sec-title">&#1502;&#1495;&#1513;&#1489;&#1493;&#1503; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</h2>
       <div class="gold-line"></div>
     </div>
-    <div class="calc-wrapper reveal">
+    <div class="calc-wrap">
       <div class="calc-row">
-        <div class="calc-field">
-          <label>&#1505;&#1499;&#1493;&#1501; &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; (&#8362;)</label>
-          <input type="number" id="loan" placeholder="&#1500;&#1491;&#1493;&#1490;&#1502;&#1492;: 1,000,000" value="1000000">
-        </div>
-        <div class="calc-field">
-          <label>&#1512;&#1497;&#1489;&#1497;&#1514; &#1513;&#1504;&#1514;&#1497;&#1514; (%)</label>
-          <input type="number" id="rate" placeholder="&#1500;&#1491;&#1493;&#1490;&#1502;&#1492;: 4.5" value="4.5" step="0.1">
-        </div>
+        <div class="calc-field"><label>&#1505;&#1499;&#1493;&#1501; &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; (&#8362;)</label><input type="number" id="loan" value="1000000"></div>
+        <div class="calc-field"><label>&#1512;&#1497;&#1489;&#1497;&#1514; &#1513;&#1504;&#1514;&#1497;&#1514; (%)</label><input type="number" id="rate" value="4.5" step="0.1"></div>
       </div>
       <div class="calc-row">
-        <div class="calc-field">
-          <label>&#1514;&#1511;&#1493;&#1508;&#1492; (&#1513;&#1504;&#1497;&#1501;)</label>
-          <input type="number" id="years" placeholder="&#1500;&#1491;&#1493;&#1490;&#1502;&#1492;: 25" value="25">
-        </div>
-        <div class="calc-field">
-          <label>&#1505;&#1493;&#1490; &#1492;&#1500;&#1493;&#1493;&#1488;&#1492;</label>
-          <select id="loanType">
-            <option value="shpitzer">&#1513;&#1508;&#1497;&#1510;&#1512; (&#1511;&#1512;&#1503; + &#1512;&#1497;&#1489;&#1497;&#1514; &#1513;&#1493;&#1493;&#1497;&#1501;)</option>
-            <option value="keren">&#1511;&#1512;&#1503; &#1513;&#1493;&#1493;&#1492;</option>
-          </select>
-        </div>
+        <div class="calc-field"><label>&#1514;&#1511;&#1493;&#1508;&#1492; (&#1513;&#1504;&#1497;&#1501;)</label><input type="number" id="years" value="25"></div>
+        <div class="calc-field"><label>&#1505;&#1493;&#1490; &#1492;&#1500;&#1493;&#1493;&#1488;&#1492;</label><select id="ltype"><option value="s">&#1513;&#1508;&#1497;&#1510;&#1512;</option><option value="k">&#1511;&#1512;&#1503; &#1513;&#1493;&#1493;&#1492;</option></select></div>
       </div>
-      <button class="calc-btn" onclick="calculateMortgage()">&#1495;&#1513;&#1489; &#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#127968;</button>
+      <button class="calc-btn" onclick="calcMortgage()">&#1495;&#1513;&#1489; &#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#127968;</button>
       <div class="calc-result" id="calcResult">
-        <div class="result-label">&#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#1502;&#1513;&#1493;&#1506;&#1512;</div>
-        <div class="result-amount" id="resultAmount">&#8362;0</div>
+        <div class="result-lbl">&#1514;&#1513;&#1500;&#1493;&#1501; &#1495;&#1493;&#1491;&#1513;&#1497; &#1502;&#1513;&#1493;&#1506;&#1512;</div>
+        <div class="result-amt" id="resAmt">&#8362;0</div>
         <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-          <div>
-            <div style="color:rgba(255,255,255,0.5);font-size:0.8rem">&#1505;&#1492;"&#1499; &#1514;&#1513;&#1500;&#1493;&#1502;&#1497;&#1501;</div>
-            <div id="totalPayment" style="color:var(--gold-light);font-size:1.1rem;font-weight:700;margin-top:0.25rem">&#8362;0</div>
-          </div>
-          <div>
-            <div style="color:rgba(255,255,255,0.5);font-size:0.8rem">&#1505;&#1492;"&#1499; &#1512;&#1497;&#1489;&#1497;&#1514;</div>
-            <div id="totalInterest" style="color:rgba(255,255,255,0.6);font-size:1.1rem;font-weight:700;margin-top:0.25rem">&#8362;0</div>
-          </div>
+          <div><div style="color:rgba(255,255,255,.5);font-size:.8rem">&#1505;&#1492;"&#1499; &#1514;&#1513;&#1500;&#1493;&#1502;&#1497;&#1501;</div><div id="resTotal" style="color:var(--gold-light);font-size:1.1rem;font-weight:700;margin-top:.25rem">&#8362;0</div></div>
+          <div><div style="color:rgba(255,255,255,.5);font-size:.8rem">&#1505;&#1492;"&#1499; &#1512;&#1497;&#1489;&#1497;&#1514;</div><div id="resInt" style="color:rgba(255,255,255,.6);font-size:1.1rem;font-weight:700;margin-top:.25rem">&#8362;0</div></div>
         </div>
-        <div class="result-note">* &#1492;&#1495;&#1497;&#1513;&#1493;&#1489; &#1492;&#1493;&#1488; &#1492;&#1506;&#1512;&#1499;&#1492; &#1489;&#1500;&#1489;&#1491;. &#1500;&#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1491;&#1493;&#1497;&#1511; &#8212; &#1510;&#1512;&#1493; &#1511;&#1513;&#1512;!</div>
-        <a href="#contact" class="btn-primary" style="margin-top:1.25rem;display:inline-flex">&#1512;&#1493;&#1510;&#1492; &#1497;&#1497;&#1506;&#1493;&#1509; &#1488;&#1497;&#1513;&#1497;? &#8594;</a>
+        <p style="color:rgba(255,255,255,.4);font-size:.8rem;margin-top:.5rem">* &#1492;&#1495;&#1497;&#1513;&#1493;&#1489; &#1492;&#1493;&#1488; &#1492;&#1506;&#1512;&#1499;&#1492; &#1489;&#1500;&#1489;&#1491;. &#1500;&#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1491;&#1493;&#1497;&#1511; &#8212; &#1510;&#1512;&#1493; &#1511;&#1513;&#1512;!</p>
+        <a href="#contact" class="btn-gold" style="margin-top:1.25rem;display:inline-block">&#1512;&#1493;&#1510;&#1492; &#1497;&#1497;&#1506;&#1493;&#1509; &#1488;&#1497;&#1513;&#1497;? &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section id="reviews">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">&#1502;&#1492; &#1488;&#1493;&#1502;&#1512;&#1497;&#1501; &#1506;&#1500;&#1497;&#1504;&#1493;</span>
-      <h2 class="section-title light">&#1492;&#1502;&#1500;&#1510;&#1493;&#1514; &#1500;&#1511;&#1493;&#1495;&#1493;&#1514;</h2>
+  <div class="sec-inner">
+    <div class="sec-header">
+      <span class="sec-label">&#1502;&#1492; &#1488;&#1493;&#1502;&#1512;&#1497;&#1501; &#1506;&#1500;&#1497;&#1504;&#1493;</span>
+      <h2 class="sec-title light">&#1492;&#1502;&#1500;&#1510;&#1493;&#1514; &#1500;&#1511;&#1493;&#1495;&#1493;&#1514;</h2>
       <div class="gold-line"></div>
     </div>
-    <div class="reveal" style="max-width:1100px;margin:0 auto;">
+    <div id="trustindex-widget">
       <script defer async src='https://cdn.trustindex.io/loader.js?60de5a468822165d1f168b48b6b'></script>
     </div>
-    <div style="text-align:center;margin-top:2rem;">
-      <p style="color:rgba(255,255,255,0.4);font-size:0.9rem">43 &#1489;&#1497;&#1511;&#1493;&#1512;&#1493;&#1514; &#1488;&#1502;&#1497;&#1514;&#1497;&#1493;&#1514; &#1502;-Google &#8226; &#1491;&#1497;&#1512;&#1493;&#1490; 5/5 &#11088;</p>
-    </div>
   </div>
 </section>
 
-<!-- BLOG -->
 <section id="blog">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <span class="section-label">&#1497;&#1491;&#1506; &#1513;&#1502;&#1513;&#1514;&#1500;&#1501;</span>
-      <h2 class="section-title">&#1502;&#1488;&#1502;&#1512;&#1497;&#1501; &#1493;&#1506;&#1491;&#1499;&#1493;&#1504;&#1497;&#1501;</h2>
+  <div class="sec-inner">
+    <div class="sec-header">
+      <span class="sec-label">&#1497;&#1491;&#1506; &#1513;&#1502;&#1513;&#1514;&#1500;&#1501;</span>
+      <h2 class="sec-title">&#1502;&#1488;&#1502;&#1512;&#1497;&#1501; &#1493;&#1506;&#1491;&#1499;&#1493;&#1504;&#1497;&#1501;</h2>
       <div class="gold-line"></div>
     </div>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-card-header">
-          <div class="blog-category">&#1512;&#1497;&#1489;&#1497;&#1493;&#1514;</div>
-          <div class="blog-title">&#1506;&#1491;&#1499;&#1493;&#1503; &#1512;&#1497;&#1489;&#1497;&#1514; &#1489;&#1504;&#1511; &#1497;&#1513;&#1512;&#1488;&#1500; &#8212; &#1502;&#1492; &#1494;&#1492; &#1488;&#1493;&#1502;&#1512; &#1506;&#1500; &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1513;&#1500;&#1498;?</div>
-        </div>
-        <div class="blog-body">
-          <p class="blog-excerpt">&#1489;&#1504;&#1511; &#1497;&#1513;&#1512;&#1488;&#1500; &#1513;&#1497;&#1504;&#1492; &#1488;&#1514; &#1492;&#1512;&#1497;&#1489;&#1497;&#1514;. &#1492;&#1504;&#1492; &#1502;&#1492; &#1513;&#1499;&#1500; &#1489;&#1506;&#1500; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1510;&#1512;&#1497;&#1498; &#1500;&#1491;&#1506;&#1514; &#1493;&#1488;&#1497;&#1498; &#1494;&#1492; &#1502;&#1513;&#1508;&#1497;&#1506; &#1506;&#1500; &#1492;&#1514;&#1513;&#1500;&#1493;&#1501; &#1492;&#1495;&#1493;&#1491;&#1513;&#1497; &#1513;&#1500;&#1499;&#1501;.</p>
-          <a href="#contact" class="blog-link">&#1511;&#1512;&#1488; &#1506;&#1493;&#1491; &#8592;</a>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-card-header">
-          <div class="blog-category">&#1496;&#1497;&#1508;&#1497;&#1501;</div>
-          <div class="blog-title">5 &#1496;&#1506;&#1493;&#1497;&#1493;&#1514; &#1504;&#1508;&#1493;&#1510;&#1493;&#1514; &#1513;&#1511;&#1493;&#1504;&#1497;&#1501; &#1506;&#1493;&#1513;&#1497;&#1501; &#1499;&#1513;&#1500;&#1493;&#1511;&#1495;&#1497;&#1501; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</div>
-        </div>
-        <div class="blog-body">
-          <p class="blog-excerpt">&#1502;&#1504;&#1497;&#1505;&#1497;&#1493;&#1503; &#1513;&#1500; &#1502;&#1488;&#1493;&#1514; &#1500;&#1511;&#1493;&#1495;&#1493;&#1514; &#8212; &#1492;&#1504;&#1492; &#1492;&#1496;&#1506;&#1493;&#1497;&#1493;&#1514; &#1492;&#1504;&#1508;&#1493;&#1510;&#1493;&#1514; &#1489;&#1497;&#1493;&#1514;&#1512; &#1493;&#1488;&#1497;&#1498; &#1500;&#1492;&#1497;&#1502;&#1504;&#1506; &#1502;&#1492;&#1503;. &#1511;&#1512;&#1497;&#1488;&#1514; &#1495;&#1493;&#1489;&#1492; &#1500;&#1508;&#1504;&#1497; &#1495;&#1514;&#1497;&#1502;&#1492;!</p>
-          <a href="#contact" class="blog-link">&#1511;&#1512;&#1488; &#1506;&#1493;&#1491; &#8592;</a>
-        </div>
-      </div>
-      <div class="blog-card reveal">
-        <div class="blog-card-header">
-          <div class="blog-category">&#1502;&#1495;&#1494;&#1493;&#1512;</div>
-          <div class="blog-title">&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#8212; &#1502;&#1514;&#1497; &#1499;&#1491;&#1488;&#1497; &#1493;&#1502;&#1514;&#1497; &#1500;&#1488;?</div>
-        </div>
-        <div class="blog-body">
-          <p class="blog-excerpt">&#1488;&#1497;&#1498; &#1497;&#1493;&#1491;&#1506;&#1497;&#1501; &#1488;&#1501; &#1499;&#1491;&#1488;&#1497; &#1500;&#1502;&#1495;&#1494;&#1512;? &#1499;&#1500; &#1502;&#1492; &#1513;&#1510;&#1512;&#1497;&#1498; &#1500;&#1491;&#1506;&#1514; &#1506;&#1500; &#1506;&#1502;&#1500;&#1514; &#1508;&#1497;&#1512;&#1506;&#1493;&#1503; &#1502;&#1493;&#1511;&#1491;&#1501;, &#1495;&#1497;&#1505;&#1499;&#1493;&#1503; &#1508;&#1493;&#1496;&#1504;&#1510;&#1497;&#1488;&#1500;&#1497; &#1493;&#1502;&#1514;&#1497; &#1500;&#1508;&#1506;&#1493;&#1500;.</p>
-          <a href="#contact" class="blog-link">&#1511;&#1512;&#1488; &#1506;&#1493;&#1491; &#8592;</a>
-        </div>
-      </div>
+    <div class="blog-grid" id="blogGrid">
+      <div class="blog-card"><div class="blog-head"><div class="blog-cat">&#1512;&#1497;&#1489;&#1497;&#1493;&#1514;</div><div class="blog-title2">&#1506;&#1491;&#1499;&#1493;&#1503; &#1512;&#1497;&#1489;&#1497;&#1514; &#1489;&#1504;&#1511; &#1497;&#1513;&#1512;&#1488;&#1500; &#8212; &#1502;&#1492; &#1494;&#1492; &#1488;&#1493;&#1502;&#1512; &#1506;&#1500; &#1492;&#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1513;&#1500;&#1498;?</div></div><div class="blog-body"><p class="blog-exc">&#1489;&#1504;&#1511; &#1497;&#1513;&#1512;&#1488;&#1500; &#1513;&#1497;&#1504;&#1492; &#1488;&#1514; &#1492;&#1512;&#1497;&#1489;&#1497;&#1514;. &#1492;&#1504;&#1492; &#1502;&#1492; &#1513;&#1499;&#1500; &#1489;&#1506;&#1500; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1510;&#1512;&#1497;&#1498; &#1500;&#1491;&#1506;&#1514; &#1493;&#1488;&#1497;&#1498; &#1494;&#1492; &#1502;&#1513;&#1508;&#1497;&#1506; &#1506;&#1500; &#1492;&#1514;&#1513;&#1500;&#1493;&#1501; &#1492;&#1495;&#1493;&#1491;&#1513;&#1497;.</p><a href="#contact" class="blog-link">&#1511;&#1512;&#1488; &#1506;&#1493;&#1491; &larr;</a></div></div>
+      <div class="blog-card"><div class="blog-head"><div class="blog-cat">&#1496;&#1497;&#1508;&#1497;&#1501;</div><div class="blog-title2">5 &#1496;&#1506;&#1493;&#1497;&#1493;&#1514; &#1504;&#1508;&#1493;&#1510;&#1493;&#1514; &#1513;&#1511;&#1493;&#1504;&#1497;&#1501; &#1506;&#1493;&#1513;&#1497;&#1501; &#1499;&#1513;&#1500;&#1493;&#1511;&#1495;&#1497;&#1501; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</div></div><div class="blog-body"><p class="blog-exc">&#1502;&#1504;&#1497;&#1505;&#1497;&#1493;&#1503; &#1513;&#1500; &#1502;&#1488;&#1493;&#1514; &#1500;&#1511;&#1493;&#1495;&#1493;&#1514; &#8212; &#1492;&#1504;&#1492; &#1492;&#1496;&#1506;&#1493;&#1497;&#1493;&#1514; &#1492;&#1504;&#1508;&#1493;&#1510;&#1493;&#1514; &#1489;&#1497;&#1493;&#1514;&#1512; &#1493;&#1488;&#1497;&#1498; &#1500;&#1492;&#1497;&#1502;&#1504;&#1506; &#1502;&#1492;&#1503;. &#1511;&#1512;&#1497;&#1488;&#1514; &#1495;&#1493;&#1489;&#1492; &#1500;&#1508;&#1504;&#1497; &#1495;&#1514;&#1497;&#1502;&#1492;!</p><a href="#contact" class="blog-link">&#1511;&#1512;&#1488; &#1506;&#1493;&#1491; &larr;</a></div></div>
+      <div class="blog-card"><div class="blog-head"><div class="blog-cat">&#1502;&#1495;&#1494;&#1493;&#1512;</div><div class="blog-title2">&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#8212; &#1502;&#1514;&#1497; &#1499;&#1491;&#1488;&#1497; &#1493;&#1502;&#1514;&#1497; &#1500;&#1488;?</div></div><div class="blog-body"><p class="blog-exc">&#1488;&#1497;&#1498; &#1497;&#1493;&#1491;&#1506;&#1497;&#1501; &#1488;&#1501; &#1499;&#1491;&#1488;&#1497; &#1500;&#1502;&#1495;&#1494;&#1512;? &#1499;&#1500; &#1502;&#1492; &#1513;&#1510;&#1512;&#1497;&#1498; &#1500;&#1491;&#1506;&#1514; &#1506;&#1500; &#1506;&#1502;&#1500;&#1514; &#1508;&#1497;&#1512;&#1506;&#1493;&#1503; &#1502;&#1493;&#1511;&#1491;&#1501; &#1493;&#1499;&#1497;&#1510;&#1491; &#1500;&#1492;&#1513;&#1497;&#1490; &#1495;&#1497;&#1505;&#1499;&#1493;&#1503; &#1488;&#1502;&#1497;&#1514;&#1497;.</p><a href="#contact" class="blog-link">&#1511;&#1512;&#1488; &#1506;&#1493;&#1491; &larr;</a></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <div class="section-inner">
+  <div class="sec-inner">
     <div class="contact-grid">
-      <div class="contact-info reveal">
-        <span class="section-label">&#1491;&#1489;&#1512;&#1493; &#1488;&#1497;&#1514;&#1504;&#1493;</span>
-        <h2 class="section-title">&#1510;&#1512;&#1493; &#1511;&#1513;&#1512;</h2>
-        <div class="gold-line"></div>
-        <p class="contact-desc">
-          &#1488;&#1504;&#1495;&#1504;&#1493; &#1499;&#1488;&#1503; &#1489;&#1513;&#1489;&#1497;&#1500;&#1499;&#1501;. &#1492;&#1513;&#1488;&#1497;&#1512;&#1493; &#1508;&#1512;&#1496;&#1497;&#1501; &#1493;&#1504;&#1495;&#1494;&#1493;&#1512; &#1488;&#1500;&#1497;&#1499;&#1501; &#1514;&#1493;&#1498; &#1513;&#1506;&#1493;&#1514; &#1505;&#1508;&#1493;&#1512;&#1493;&#1514; 
-          &#1500;&#1514;&#1497;&#1488;&#1493;&#1501; &#1497;&#1497;&#1506;&#1493;&#1509; &#1512;&#1488;&#1513;&#1493;&#1504;&#1497; &#8212; &#1500;&#1500;&#1488; &#1506;&#1500;&#1493;&#1514; &#1493;&#1500;&#1500;&#1488; &#1492;&#1514;&#1495;&#1497;&#1497;&#1489;&#1493;&#1514;.
-        </p>
+      <div>
+        <span class="sec-label">&#1491;&#1489;&#1512;&#1493; &#1488;&#1497;&#1514;&#1504;&#1493;</span>
+        <h2 class="sec-title light">&#1510;&#1512;&#1493; &#1511;&#1513;&#1512;</h2>
+        <div class="gold-line" style="margin:1.5rem 0 0"></div>
+        <p class="contact-desc">&#1488;&#1504;&#1495;&#1504;&#1493; &#1499;&#1488;&#1503; &#1489;&#1513;&#1489;&#1497;&#1500;&#1499;&#1501;. &#1492;&#1513;&#1488;&#1497;&#1512;&#1493; &#1508;&#1512;&#1496;&#1497;&#1501; &#1493;&#1504;&#1495;&#1494;&#1493;&#1512; &#1488;&#1500;&#1497;&#1499;&#1501; &#1514;&#1493;&#1498; &#1513;&#1506;&#1493;&#1514; &#1505;&#1508;&#1493;&#1512;&#1493;&#1514; &#8212; &#1500;&#1497;&#1497;&#1506;&#1493;&#1509; &#1512;&#1488;&#1513;&#1493;&#1504;&#1497; &#1495;&#1497;&#1504;&#1501;.</p>
         <div class="contact-details">
-          <a href="tel:0509143496" class="contact-item">
-            <div class="contact-item-icon">&#128222;</div>
-            <span>050-914-3496</span>
-          </a>
-          <a href="https://wa.me/972509143496" class="contact-item" target="_blank">
-            <div class="contact-item-icon">&#128172;</div>
-            <span>WhatsApp &#8212; 050-914-3496</span>
-          </a>
-          <a href="/cdn-cgi/l/email-protection#2445404d5616151516644349454d480a474b49" class="contact-item">
-            <div class="contact-item-icon">&#9993;&#65039;</div>
-            <span><span class="__cf_email__" data-cfemail="0d6c69647f3f3c3c3f4d6a606c6461236e6260">[email&#160;protected]</span></span>
-          </a>
+          <a href="tel:0509143496" class="contact-item"><div class="contact-icon">&#128222;</div><span>050-914-3496</span></a>
+          <a href="https://wa.me/972509143496" class="contact-item" target="_blank"><div class="contact-icon">&#128172;</div><span>WhatsApp</span></a>
+          <a href="/cdn-cgi/l/email-protection#3c5d58554e0e0d0d0e7c5b515d5550125f5351" class="contact-item"><div class="contact-icon">&#9993;&#65039;</div><span><span class="__cf_email__" data-cfemail="f9989d908bcbc8c8cbb99e94989095d79a9694">[email&#160;protected]</span></span></a>
         </div>
       </div>
-      <div class="contact-form reveal">
+      <div class="contact-form-wrap">
         <div id="formArea">
           <div class="form-row">
-            <div class="form-field">
-              <label>&#1513;&#1501; &#1502;&#1500;&#1488;</label>
-              <input type="text" placeholder="&#1497;&#1513;&#1512;&#1488;&#1500; &#1497;&#1513;&#1512;&#1488;&#1500;&#1497;">
-            </div>
-            <div class="form-field">
-              <label>&#1496;&#1500;&#1508;&#1493;&#1503;</label>
-              <input type="tel" placeholder="050-0000000">
-            </div>
+            <div class="form-field"><label>&#1513;&#1501; &#1502;&#1500;&#1488;</label><input type="text" placeholder="&#1497;&#1513;&#1512;&#1488;&#1500; &#1497;&#1513;&#1512;&#1488;&#1500;&#1497;"></div>
+            <div class="form-field"><label>&#1496;&#1500;&#1508;&#1493;&#1503;</label><input type="tel" placeholder="050-0000000"></div>
           </div>
-          <div class="form-field">
-            <label>&#1504;&#1493;&#1513;&#1488; &#1492;&#1508;&#1504;&#1497;&#1497;&#1492;</label>
-            <select>
-              <option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1512;&#1488;&#1513;&#1493;&#1504;&#1492;</option>
-              <option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1513;&#1504;&#1497;&#1497;&#1492; / &#1492;&#1513;&#1511;&#1506;&#1492;</option>
-              <option>&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488; &#1511;&#1497;&#1497;&#1502;&#1514;</option>
-              <option>&#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;</option>
-              <option>&#1488;&#1495;&#1512;</option>
-            </select>
+          <div class="form-field"><label>&#1504;&#1493;&#1513;&#1488; &#1492;&#1508;&#1504;&#1497;&#1497;&#1492;</label>
+            <select><option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1512;&#1488;&#1513;&#1493;&#1504;&#1492;</option><option>&#1512;&#1499;&#1497;&#1513;&#1514; &#1491;&#1497;&#1512;&#1492; &#1513;&#1504;&#1497;&#1497;&#1492;</option><option>&#1502;&#1495;&#1494;&#1493;&#1512; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;</option><option>&#1489;&#1504;&#1497;&#1497;&#1492; &#1506;&#1510;&#1502;&#1497;&#1514;</option><option>&#1488;&#1495;&#1512;</option></select>
           </div>
-          <div class="form-field">
-            <label>&#1492;&#1493;&#1491;&#1506;&#1492; (&#1488;&#1493;&#1508;&#1510;&#1497;&#1493;&#1504;&#1500;&#1497;)</label>
-            <textarea placeholder="&#1505;&#1508;&#1512;&#1493; &#1500;&#1504;&#1493; &#1489;&#1511;&#1510;&#1512;&#1492; &#1506;&#1500; &#1492;&#1502;&#1510;&#1489; &#1513;&#1500;&#1499;&#1501;..."></textarea>
-          </div>
+          <div class="form-field"><label>&#1492;&#1493;&#1491;&#1506;&#1492;</label><textarea placeholder="&#1505;&#1508;&#1512;&#1493; &#1500;&#1504;&#1493; &#1489;&#1511;&#1510;&#1512;&#1492;..."></textarea></div>
           <button class="form-submit" onclick="submitForm()">&#1513;&#1500;&#1495; &#1489;&#1511;&#1513;&#1514; &#1497;&#1497;&#1506;&#1493;&#1509; &#10003;</button>
         </div>
         <div class="form-success" id="formSuccess">
-          <div class="form-success-icon">&#9989;</div>
-          <div class="form-success-text">&#1492;&#1508;&#1504;&#1497;&#1497;&#1492; &#1492;&#1514;&#1511;&#1489;&#1500;&#1492; &#1489;&#1492;&#1510;&#1500;&#1495;&#1492;!</div>
-          <div class="form-success-sub">&#1504;&#1495;&#1494;&#1493;&#1512; &#1488;&#1500;&#1497;&#1499;&#1501; &#1514;&#1493;&#1498; &#1513;&#1506;&#1493;&#1514; &#1505;&#1508;&#1493;&#1512;&#1493;&#1514;</div>
+          <div style="font-size:3rem;margin-bottom:1rem">&#9989;</div>
+          <div style="color:var(--gold);font-size:1.2rem;font-weight:700">&#1492;&#1508;&#1504;&#1497;&#1497;&#1492; &#1492;&#1514;&#1511;&#1489;&#1500;&#1492; &#1489;&#1492;&#1510;&#1500;&#1495;&#1492;!</div>
+          <div style="color:rgba(255,255,255,.5);font-size:.9rem;margin-top:.5rem">&#1504;&#1495;&#1494;&#1493;&#1512; &#1488;&#1500;&#1497;&#1499;&#1501; &#1514;&#1493;&#1498; &#1513;&#1506;&#1493;&#1514; &#1505;&#1508;&#1493;&#1512;&#1493;&#1514;</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <img id="footer-logo-img" src="" alt="A.L">
-    </div>
-    <div class="footer-copy">&#169; 2025 A.L &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#8212; &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;. &#1499;&#1500; &#1492;&#1494;&#1499;&#1493;&#1497;&#1493;&#1514; &#1513;&#1502;&#1493;&#1512;&#1493;&#1514;.</div>
+    <div class="footer-logo"><img id="footer-logo" src="https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png" alt="A.L"></div>
+    <div class="footer-copy">&copy; 2025 A.L &#1497;&#1497;&#1506;&#1493;&#1509; &#1502;&#1513;&#1499;&#1504;&#1514;&#1488;&#1493;&#1514; &#8212; &#1488;&#1491;&#1497;&#1512; &#1500;&#1493;&#1497;</div>
     <ul class="footer-links">
       <li><a href="#hero">&#1489;&#1497;&#1514;</a></li>
       <li><a href="#services">&#1513;&#1497;&#1512;&#1493;&#1514;&#1497;&#1501;</a></li>
@@ -1314,66 +313,43 @@
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/972509143496" class="wa-float" target="_blank" title="&#1513;&#1500;&#1495; &#1492;&#1493;&#1491;&#1506;&#1492; &#1489;-WhatsApp">&#128172;</a>
+<a href="https://wa.me/972509143496" class="wa-float" target="_blank">&#128172;</a>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Embed images as base64
-const LOGO_B64 = '';
-const PHOTO_B64 = '';
-window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('nav-logo-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png';
-  document.getElementById('hero-photo').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg';
-  document.getElementById('about-photo').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg';
-  document.getElementById('footer-logo-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png';
-});
+document.getElementById('logo-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png';
+document.getElementById('photo-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg';
+document.getElementById('about-img').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/adir.jpg';
+document.getElementById('footer-logo').src = 'https://raw.githubusercontent.com/adir2112-blip/al-mahskanta/main/logo.png';
 
-// Mortgage Calculator
-function calculateMortgage() {
+function calcMortgage() {
   const loan = parseFloat(document.getElementById('loan').value);
-  const annualRate = parseFloat(document.getElementById('rate').value);
+  const rate = parseFloat(document.getElementById('rate').value);
   const years = parseInt(document.getElementById('years').value);
-  const type = document.getElementById('loanType').value;
-
-  if (!loan || !annualRate || !years) return;
-
-  const months = years * 12;
-  const monthlyRate = annualRate / 100 / 12;
-  let monthly, total, interest;
-
-  if (type === 'shpitzer') {
-    monthly = loan * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
-    total = monthly * months;
-    interest = total - loan;
-  } else {
-    const principalPayment = loan / months;
-    monthly = principalPayment + (loan * monthlyRate);
-    total = loan + (loan * monthlyRate * months / 2);
-    interest = total - loan;
-  }
-
-  const fmt = n => '&#8362;' + Math.round(n).toLocaleString('he-IL');
-  document.getElementById('resultAmount').textContent = fmt(monthly);
-  document.getElementById('totalPayment').textContent = fmt(total);
-  document.getElementById('totalInterest').textContent = fmt(interest);
-
-  const res = document.getElementById('calcResult');
-  res.classList.add('show');
+  if (!loan || !rate || !years) return;
+  const m = years * 12, mr = rate / 100 / 12;
+  const monthly = loan * (mr * Math.pow(1+mr,m)) / (Math.pow(1+mr,m)-1);
+  const total = monthly * m;
+  const fmt = n => '₪' + Math.round(n).toLocaleString('he-IL');
+  document.getElementById('resAmt').textContent = fmt(monthly);
+  document.getElementById('resTotal').textContent = fmt(total);
+  document.getElementById('resInt').textContent = fmt(total - loan);
+  document.getElementById('calcResult').classList.add('show');
 }
 
-// Form submit
 function submitForm() {
-  const name = document.querySelector('#formArea input[type=text]') ? document.querySelector('#formArea input[type=text]').value : '';
-  const phone = document.querySelector('#formArea input[type=tel]') ? document.querySelector('#formArea input[type=tel]').value : '';
-  const subject = document.querySelector('#formArea select') ? document.querySelector('#formArea select').value : '';
-  const message = document.querySelector('#formArea textarea') ? document.querySelector('#formArea textarea').value : '';
-  if (!name || !phone) { alert('\u0410\u05E0\u05D0 \u05DE\u05DC\u05D0\u05D5 \u05E9\u05DD \u05D5\u05D8\u05DC\u05E4\u05D5\u05DF'); return; }
-  const body = encodeURIComponent('\u05E9\u05DD: ' + name + '\n\u05D8\u05DC\u05E4\u05D5\u05DF: ' + phone + '\n\u05E0\u05D5\u05E9\u05D0: ' + subject + '\n\u05D4\u05D5\u05D3\u05E2\u05D4: ' + message);
-  window.open('mailto:adir2112@gmail.com?subject=' + encodeURIComponent('\u05D1\u05E7\u05E9\u05EA \u05D9\u05D9\u05E2\u05D5\u05E5 - ' + name) + '&body=' + body);
+  const fields = document.querySelectorAll('#formArea input, #formArea select, #formArea textarea');
+  const name = fields[0] ? fields[0].value : '';
+  const phone = fields[1] ? fields[1].value : '';
+  const subject = fields[2] ? fields[2].value : '';
+  const message = fields[3] ? fields[3].value : '';
+  if (!name || !phone) { alert('אנא מלאו שם וטלפון'); return; }
+  const body = encodeURIComponent('שם: '+name+'
+טלפון: '+phone+'
+נושא: '+subject+'
+הודעה: '+message);
+  window.open('mailto:adir2112@gmail.com?subject='+encodeURIComponent('בקשת ייעוץ - '+name)+'&body='+body);
   document.getElementById('formArea').style.display = 'none';
   document.getElementById('formSuccess').classList.add('show');
 }
 
-// Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIn
